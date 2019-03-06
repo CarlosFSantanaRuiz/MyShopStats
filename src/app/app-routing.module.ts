@@ -9,9 +9,10 @@ import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboar
 const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterationPageComponent},
-  {path: 'user/:id/shop-dashboard', component: ShopDashboardComponent},
-  {path: 'user/:id/tech-dashboard', component: TechDashboardComponent},
-  {path: 'user/:id/invoice', component: InvoiceDashboardComponent},
+  {path: 'user/profile', component: RegisterationPageComponent},
+  {path: 'user/shop-dashboard', component: ShopDashboardComponent},
+  {path: 'user/tech-dashboard', component: TechDashboardComponent},
+  {path: 'user/invoice', component: InvoiceDashboardComponent},
   {path: '', redirectTo: 'user/:id/shop-dashboard', pathMatch: 'full'}
 ];
 

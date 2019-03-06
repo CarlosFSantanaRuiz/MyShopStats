@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from "@angular/forms";
+
+
+// UI Components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ShopDashboardComponent } from './components/shop/shop-dashboard/shop-dashboard.component';
@@ -22,6 +26,9 @@ import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboar
 import { LoginComponent } from './components/login/login.component';
 import { RegisterationPageComponent } from './components/login/registeration-page/registeration-page.component';
 import { ForgotLoginPageComponent } from './components/login/forgot-login-page/forgot-login-page.component';
+import { UserComponent } from './components/user/user.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 
 
 
@@ -46,11 +53,16 @@ import { ForgotLoginPageComponent } from './components/login/forgot-login-page/f
     InvoiceDashboardComponent,
     LoginComponent,
     RegisterationPageComponent,
-    ForgotLoginPageComponent
+    ForgotLoginPageComponent,
+    UserComponent,
+    UserProfileComponent,
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
