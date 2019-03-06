@@ -64,11 +64,7 @@ import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invo
     LoginComponent,
     RegisterationPageComponent,
     ForgotLoginPageComponent,
-<<<<<<< HEAD
-    UserComponent,
-    UserProfileComponent,
-    UserCreateComponent,
-=======
+
     SidebarComponent,
     TopbarComponent,
     GaugeComponent,
@@ -81,7 +77,6 @@ import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invo
     ShopProfileTechniciansComponent,
     ShopProfileDashboardComponent,
     InvoiceDeleteComponent
->>>>>>> 6f29429a24c7a9b5d2e34d2c153b08a3b2a2aaaf
   ],
   imports: [
     BrowserModule,
