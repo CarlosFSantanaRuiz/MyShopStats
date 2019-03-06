@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="780px" height="501px"
+	 viewBox="0 0 780 501" enable-background="new 0 0 780 501" xml:space="preserve">
+<title>amex-outline</title>
+<desc>Created with Sketch.</desc>
+<path fill="#B4DCDE" d="M725,0H55C24.673,0,0,24.673,0,55v391c0,30.327,24.673,55,55,55h670c30.325,0,55-24.673,55-55V55
+	C780,24.673,755.325,0,725,0z"/>
+<rect x="90.448" y="50.965" fill="#7F8A8C" width="288.869" height="23.791"/>
+<rect x="50.448" y="220.979" fill="#7F8A8C" width="149.494" height="24.252"/>
+<line fill="none" stroke="#7F8A8C" stroke-width="2" stroke-miterlimit="10" x1="199.942" y1="244.481" x2="416.432" y2="244.481"/>
+<rect x="50.448" y="285.979" fill="#7F8A8C" width="149.494" height="24.252"/>
+<line fill="none" stroke="#7F8A8C" stroke-width="2" stroke-miterlimit="10" x1="199.942" y1="309.481" x2="416.432" y2="309.481"/>
+<line fill="none" stroke="#7F8A8C" stroke-width="2" stroke-miterlimit="10" x1="199.942" y1="179.481" x2="416.432" y2="179.481"/>
+<rect x="50.448" y="155.979" fill="#7F8A8C" width="149.494" height="24.252"/>
+<g>
+	<line fill="none" x1="199.942" y1="179.481" x2="416.432" y2="179.481"/>
+</g>
+<rect x="469.929" y="115.806" fill="#B4DCDE" stroke="#7F8A8C" stroke-width="5" stroke-miterlimit="10" width="265.486" height="62.675"/>
+<g enable-background="new    ">
+	<path fill="#7F8A8C" d="M519.797,153.833c0,6.384-4.992,9.744-11.425,10.416v7.537h-7.249v-7.824
+		c-4.225-0.769-8.305-2.497-11.377-4.896l3.744-7.585c3.457,2.928,9.073,5.137,12.529,5.137c2.112,0,3.457-0.721,3.457-2.257
+		c0-5.088-17.57-1.872-17.57-13.729c0-5.185,3.505-8.833,9.217-10.129v-7.585h7.249v7.249c4.272,0.384,8.497,1.775,11.521,3.744
+		l-3.695,7.681c-3.457-1.969-8.354-3.744-11.186-3.744c-1.68,0-2.784,0.575-2.784,1.823
+		C502.228,144.616,519.797,141.687,519.797,153.833z"/>
+</g>
+<line fill="none" stroke="#7F8A8C" stroke-width="2" stroke-miterlimit="10" x1="416.432" y1="431.668" x2="735.415" y2="431.668"/>
+<path fill="none" stroke="#7F8A8C" stroke-width="3" stroke-miterlimit="10" d="M430.5,448.335
+	c18.547-5.395,38.211-23.21,48.505-39.29c6.707-10.477,11.484-21.509,15.898-33.071c1.936-5.069,2.542-14.036,6.464-17.987
+	c4.305,19.01-2.891,44.6,5.95,61.664c16.023,30.929,49.732-2.58,62.267-20.333c1.646,10.85-1.554,20.36,6.883,29.021
+	c12.394,12.724,36.77,12.798,49.736,2.03c6.991-5.804,14.757-12.178,20.966-18.333c3.362-3.333,10.229-14.067,16.166-13.781
+	c7.096,0.344,15.043,16.586,20.315,21.116c8.807,7.568,27.682,18.104,39.517,16.964"/>
+</svg>

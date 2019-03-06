@@ -1,0 +1,63 @@
+<div class="dashboard-main-stats">
+  <div class="dashboard-main-stats-header stats-bg-{{color}}">
+    <i class="fa fa-bar-chart chart-icons" aria-hidden="true"></i>
+    <span>{{title}}</span>
+    <span ng-if="isActive" class="dashboard-main-arrow-right"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>
+  </div>
+  <div class="dashboard-main-col-left">
+    <div>
+<!--
+    <div class="gauge-popover-outer">
+    <div class="arrow-left"></div>
+    <div class="gauge-popover">
+      <span class="gauge-goal-img"><img src="assets/img/goals-left-icon.svg" width="30"></span>
+      <span class="gauge-goal-text">GOAL LEFT</span>
+      <span class="gauge-goal-left-box stats-{{color}}">{{actualVsGoalDif}}</span>
+    </div>
+    </div>
+-->
+    <div class="gauge-hover-circle" >
+    </div>
+    <div id="myDIV">
+      <img src="assets/img/gauge-meter.svg" class="gauge-meter" height="30" width="11">
+    </div>
+    <div class="gauge-img">
+        <img src="assets/img/car-icon-{{color}}.svg" width="25"/>
+    </div>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px"
+          height="100px" viewBox="0 0 165 165" enable-background="new 0 0 165 165" xml:space="preserve">
+
+        <g id="Layer_2">
+            <circle fill="#4C4B4A" cx="83.406" cy="82.897" r="78.398"/>
+            <circle fill="#F3F3F3" cx="83.406" cy="82.897" r="68.641"/>
+            <circle fill="#DD4C37" cx="83.803" cy="83.564" r="55.618"/>
+          <circle class="gauge-inner-circle" cx="83.803" cy="83.564" r="55.618" />
+          <circle n r="31" cx="84" cy="-84" class="circle-gauge-stroke stat-new-stroke"></circle>
+            <path fill="#F3F3F3" d="M130.021,129.016l-2.049,1.959l-10.367-10.841l1.851-1.77L84.202,82.83l-39.809,40.135l1.636,1.627
+                l-8.907,8.954c12.206,11.163,28.439,17.992,46.284,17.992c19.076,0,36.33-7.787,48.771-20.351L130.021,129.016z"/>
+            <path fill="#4C4B4A" d="M83.406,20.613c-34.398,0-62.283,27.885-62.283,62.283c0,18.303,7.896,34.762,20.468,46.158l4.333-4.355
+                l3.821-3.775c0.392-0.388,0.396-1.022,0.01-1.415l-2.079-2.105c-0.388-0.391-1.025-0.396-1.415-0.008l-3.618,3.574
+                C34.023,111.489,28.65,99.018,28.229,85.3l4.438-0.005c0.55-0.002,0.999-0.452,0.999-1.002l-0.003-2.959
+                c-0.001-0.55-0.451-1-1.001-0.999l-4.377,0.006c0.75-13.116,6.038-25.017,14.327-34.148l2.878,2.855
+                c0.391,0.388,1.026,0.385,1.414-0.005l2.084-2.101c0.388-0.391,0.385-1.028-0.006-1.414l-2.872-2.85
+                c9.275-8.555,21.462-13.999,34.91-14.662v4.01c0,0.55,0.45,1,1,1h2.958c0.551,0,1-0.45,1-1v-4.025
+                c13.293,0.512,25.385,5.686,34.694,13.938l-3.419,3.376c-0.391,0.388-0.393,1.023-0.008,1.414l2.08,2.105
+                c0.387,0.391,1.023,0.396,1.414,0.009l3.492-3.451c8.72,9.232,14.316,21.441,15.089,34.949l-5.138,0.007
+                c-0.55,0.001-1,0.451-0.998,1.001l0.002,2.959c0.002,0.549,0.453,0.998,1.002,0.998l5.186-0.006
+                c-0.419,13.606-5.72,25.975-14.218,35.423l-4.165-4.132c-0.391-0.387-1.027-0.384-1.414,0.006l-2.084,2.102
+                c-0.389,0.391-0.385,1.027,0.005,1.414l4.188,4.153c-0.022,0.021-0.044,0.044-0.066,0.065l4.082,4.269
+                c12.288-11.377,19.987-27.639,19.987-45.705C145.689,48.498,117.804,20.613,83.406,20.613z"/>
+            <path opacity="0.1" fill="#4C4B4A" d="M83.406,4.5v156.795c43.298-0.001,78.396-35.1,78.396-78.397
+              C161.805,39.6,126.704,4.5,83.406,4.5z"/>
+          </g>
+
+      </svg>
+    </div>
+  </div>
+  <div class="dashboard-main-col-right">
+  <span class="dashboard-main-stats-num stats-{{color}}">{{presentableActual}}</span>
+  <span class="goal-details"><img src="assets/img/goals-icon-small.svg" title="" alt="" style="margin-right: 3px;" width="12"> GOAL
+    <span class="stats-{{color}}">{{goal}}{{symbol}}</span>
+  </span>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="col-md-7 col-shop-header-left">
+  <img class="img-circle" src="assets/img/shop-icon-car2.svg" alt="User profile picture">
+  <div class="shop-header">Shop Profile</div>
+  </div>
+  <div class="col-md-5">
+  <ul class="nav nav-tabs shop-tabs">
+      <li class="shop-info-tab" (click)="toggle('shop-profile')" [ngClass]="activeProfile === 'shop-profile' ? 'active' : ''">
+          <a>
+              <i class="fa fa-car" aria-hidden="true"></i>
+              <span>Shop Info</span>
+          </a>
+      </li>
+      <li class="technician-tab" (click)="toggle('technician')" [ngClass]="activeProfile === 'technician' ? 'active' : ''">
+          <a>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>Technicians</span>
+          </a>
+      </li>
+  </ul>
+  
+  </div>
+  
+  <section class="content">
+        <app-shop-profile-info *ngIf="activeProfile === 'shop-profile'"></app-shop-profile-info>
+        <app-shop-profile-technicians *ngIf="activeProfile === 'technician'"></app-shop-profile-technicians>
+  </section><!-- /.content -->
+  

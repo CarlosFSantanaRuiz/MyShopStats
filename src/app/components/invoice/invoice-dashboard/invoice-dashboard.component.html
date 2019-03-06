@@ -1,3 +1,24 @@
-<p>
-  invoice-dashboard works!
-</p>
+
+<div class="col-md-6 col-shop-header-left">
+  <img class="img-circle" src="assets/img/invoice-icon.svg" alt="User profile picture">
+  <div class="shop-header">Invoices</div>
+</div>
+<div class="col-md-6">
+  <app-date-picker></app-date-picker>
+</div>
+
+<div class="col-md-12">
+  <app-invoice-list></app-invoice-list>
+
+  <div class="shop-buttons-row">
+      <div ng-click="openAddInvoiceModal()" class="shop-button add-button invoice-btn">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <span class="button-text-left">Add Invoice</span>
+      </div>
+  </div>
+
+</div>
+
+<!--
+<app-invoice-delete></app-invoice-delete>
+-->

@@ -26,9 +26,24 @@ import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboar
 import { LoginComponent } from './components/login/login.component';
 import { RegisterationPageComponent } from './components/login/registeration-page/registeration-page.component';
 import { ForgotLoginPageComponent } from './components/login/forgot-login-page/forgot-login-page.component';
+<<<<<<< HEAD
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
+=======
+import { SidebarComponent } from './components/navbar/sidebar/sidebar.component';
+import { TopbarComponent } from './components/navbar/topbar/topbar.component';
+import { GaugeComponent } from './components/common/gauge/gauge.component';
+import { DatePickerComponent } from './components/common/date-picker/date-picker.component';
+import { GoalsComponent } from './components/goals/goals.component';
+import { GoalsDashboardComponent } from './components/goals/goals-dashboard/goals-dashboard.component';
+import { GoalsListComponent } from './components/goals/goals-list/goals-list.component';
+import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
+import { ShopProfileInfoComponent } from './components/shop-profile/shop-profile-info/shop-profile-info.component';
+import { ShopProfileTechniciansComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians.component';
+import { ShopProfileDashboardComponent } from './components/shop-profile/shop-profile-dashboard/shop-profile-dashboard.component';
+import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invoice-delete.component';
+>>>>>>> 6f29429a24c7a9b5d2e34d2c153b08a3b2a2aaaf
 
 
 
@@ -54,9 +69,24 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
     LoginComponent,
     RegisterationPageComponent,
     ForgotLoginPageComponent,
+<<<<<<< HEAD
     UserComponent,
     UserProfileComponent,
     UserCreateComponent,
+=======
+    SidebarComponent,
+    TopbarComponent,
+    GaugeComponent,
+    DatePickerComponent,
+    GoalsComponent,
+    GoalsDashboardComponent,
+    GoalsListComponent,
+    ShopProfileComponent,
+    ShopProfileInfoComponent,
+    ShopProfileTechniciansComponent,
+    ShopProfileDashboardComponent,
+    InvoiceDeleteComponent
+>>>>>>> 6f29429a24c7a9b5d2e34d2c153b08a3b2a2aaaf
   ],
   imports: [
     BrowserModule,

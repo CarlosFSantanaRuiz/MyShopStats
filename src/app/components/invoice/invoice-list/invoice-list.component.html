@@ -1,3 +1,30 @@
-<p>
-  invoice-list works!
-</p>
+<div class="table-responsive">
+  <table class="table table-striped table-w-border table-height">
+      <thead class="table-header-style">
+          <tr>
+              <th class="table-left">Invoice #</th>
+              <th>Technicians</th>
+              <th>Advisor</th>
+              <th class="table-center table-mid-col">Comeback</th>
+              <th class="table-center table-mid-col">CheckSheet</th>
+              <th class="table-center table-total-col">Total</th>
+              <th class="table-center table-small-col"><i class="fa fa-external-link" aria-hidden="true"></i></th>
+              <th class="table-center table-small-col"><i class="fa fa-pencil" aria-hidden="true"></i></th>
+              <th class="table-center table-small-col"><i class="fa fa-trash" aria-hidden="true"></i></th>
+          </tr>
+      </thead>
+      <tbody class="box-body">
+          <tr data-ng-repeat="invoice in invoices">
+              <td class="table-left">Invoice Number</td>
+              <td>Technican name</td>
+              <td>Adivsor Name</td>
+              <td class="table-center table-mid-col" ng-show="invoice.isComeBack"><i class="fa fa-check" aria-hidden="true"></i></td>
+              <td class="table-center table-mid-col" ng-show="invoice.hasCheckSheet"><i class="fa fa-check" aria-hidden="true"></i></td>
+              <td class="table-center table-total-col" >updateTOtal</td>
+              <td class="table-center table-small-col"><i ng-click="openDetailsInvoiceModal(invoice)" class="fa fa-external-link details-icon" aria-hidden="true"></i></td>
+              <td class="table-center table-small-col"><i ng-click="openEditInvoiceModal(invoice)" class="fa fa-pencil edit-icon" aria-hidden="true"></i></td>
+              <td class="table-center table-small-col"><i ng-click="openDeleteInvoiceModal(invoice.id)" class="fa fa-trash delete-icon" aria-hidden="true"></i></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
