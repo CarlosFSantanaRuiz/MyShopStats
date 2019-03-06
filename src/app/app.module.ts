@@ -26,11 +26,7 @@ import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboar
 import { LoginComponent } from './components/login/login.component';
 import { RegisterationPageComponent } from './components/login/registeration-page/registeration-page.component';
 import { ForgotLoginPageComponent } from './components/login/forgot-login-page/forgot-login-page.component';
-<<<<<<< HEAD
-import { UserComponent } from './components/user/user.component';
-import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
-import { UserCreateComponent } from './components/user/user-create/user-create.component';
-=======
+
 import { SidebarComponent } from './components/navbar/sidebar/sidebar.component';
 import { TopbarComponent } from './components/navbar/topbar/topbar.component';
 import { GaugeComponent } from './components/common/gauge/gauge.component';
@@ -43,7 +39,6 @@ import { ShopProfileInfoComponent } from './components/shop-profile/shop-profile
 import { ShopProfileTechniciansComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians.component';
 import { ShopProfileDashboardComponent } from './components/shop-profile/shop-profile-dashboard/shop-profile-dashboard.component';
 import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invoice-delete.component';
->>>>>>> 6f29429a24c7a9b5d2e34d2c153b08a3b2a2aaaf
 
 
 
