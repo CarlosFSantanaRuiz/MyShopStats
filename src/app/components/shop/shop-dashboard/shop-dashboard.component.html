@@ -1,3 +1,49 @@
-<p>
-  shop-dashboard works!
-</p>
+
+    <div class="shop-dashboard-header">
+      <div class="col-md-8 col-shop-header-left">
+          <img class="img-circle" src="assets/img/shop-dash-icon.svg" alt="User profile picture">
+          <div class="shop-header">Shop Dashboard</div>
+      </div>
+      <div class="col-md-4">
+        <app-date-picker></app-date-picker>
+      </div>
+    </div>
+    
+    <div class="col-md-3 shop-gauges-cols">
+      <app-gauge [color]="'yellow'" [title]="'Productivity'"></app-gauge>
+      <app-gauge [color]="'red'" [title]="'Unit Count'"></app-gauge>
+      <app-gauge [color]="'green'" [title]="'Monthly Sales'"></app-gauge>
+      <app-gauge [color]="'blue'" [title]="'Avg Ro'"></app-gauge>
+  </div>
+<!--  <app-shop-chart class="col-md-9 shop-chart-outer"></app-shop-chart>-->
+
+
+    <div class="col-md-9">
+      <div class="sales-cols sales-col-1">
+        <div class="sales-col-wrapper">
+        <div class="sales-img-outer"><img src="assets/img/daily-sales-icon.svg" height="60" width="60"></div>
+        <div class="sales-txt-outer">
+        <span class="sales-title">Daily Sales</span>
+        <span class="sales-num stats-green">100</span>
+        </div>
+        </div>
+      </div>
+      <div class="sales-cols sales-col-2">
+        <div class="sales-col-wrapper">
+        <div class="sales-img-outer"><img src="assets/img/labor-icon.svg" height="60" width="60"></div>
+        <div class="sales-txt-outer">
+        <span class="sales-title">Labor</span>
+        <span class="sales-num stats-blue">100</span>
+        </div>
+        </div>
+      </div>
+      <div class="sales-cols sales-col-3">
+        <div class="sales-col-wrapper">
+        <div class="sales-img-outer"><img src="assets/img/car-icon-yellow.svg" height="60" width="60"></div>
+        <div class="sales-txt-outer">
+        <span class="sales-title">Parts</span>
+        <span class="sales-num stats-yellow">100</span>
+        </div>
+        </div>
+      </div>
+    </div>

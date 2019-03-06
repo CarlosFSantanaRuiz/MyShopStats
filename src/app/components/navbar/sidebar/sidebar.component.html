@@ -1,0 +1,27 @@
+<div class="sidebar sidebar-hidden" ng-class="{'sidebar-show' : hideSidebar}">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img class="brand-image" src="assets/img/logo-white.svg" alt="Logo image"/></a>
+  </div>
+  <div class="nav-list-outer">
+      <div class="nav-list nav-list-top" routerLink="user/:id/shop-dashboard" [routerLinkActive]="['nav-list-active']">
+          <i class="fa fa-tachometer green-icon" aria-hidden="true"></i>
+          Shop Dashboard
+      </div>
+      <div class="nav-list" routerLink="user/:id/tech-dashboard" [routerLinkActive]="['nav-list-active']">
+          <i class="fa fa-users green-icon" arial-hidden="true"></i>
+          Tech Dashboard
+      </div>
+      <div class="nav-list" routerLink="user/:id/goals" [routerLinkActive]="['nav-list-active']">
+          <i class="fa fa-bar-chart-o green-icon" arial-hidden="true"></i>
+          Goals
+      </div>
+      <div class="nav-list" routerLink="user/:id/invoice" [routerLinkActive]="['nav-list-active']">
+          <i class="fa fa-file-text-o green-icon" arial-hidden="true"></i>
+          Invoices
+      </div>
+      <div class="nav-list nav-list-bottom" routerLink="user/:id/shop-profile" [routerLinkActive]="['nav-list-active']">
+          <i class="fa fa-car green-icon" arial-hidden="true"></i>
+          Shop Profile
+      </div>
+  </div>
+</div>

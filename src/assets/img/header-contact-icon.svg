@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="70px" height="85px" viewBox="0 0 70 85" enable-background="new 0 0 70 85" xml:space="preserve">
+<g id="Layer_6">
+	<g>
+		<path fill="#FFFFFF" d="M56.75,72.5c0,3.3-2.7,6-6,6H20c-3.3,0-6-2.7-6-6v-60c0-3.3,2.7-6,6-6h30.75c3.3,0,6,2.7,6,6V72.5z"/>
+	</g>
+	<rect x="16.5" y="14.666" fill="#0093B7" width="37.75" height="53.833"/>
+	<path fill="#434B4F" d="M41.85,11.275c0,0.449-0.227,0.813-0.504,0.813H30.355c-0.279,0-0.505-0.364-0.505-0.813l0,0
+		c0-0.449,0.227-0.813,0.505-0.813h10.989C41.624,10.462,41.85,10.826,41.85,11.275L41.85,11.275z"/>
+	<circle fill="#FFFFFF" stroke="#434B4F" stroke-width="0.5" stroke-miterlimit="10" cx="35.7" cy="73.225" r="2.875"/>
+	<polygon opacity="0.2" fill="#FFFFFF" enable-background="new    " points="54.25,14.666 16.5,14.666 16.5,68.499 16.678,68.499 
+		54.25,15.698 	"/>
+</g>
+</svg>

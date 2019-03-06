@@ -1,0 +1,25 @@
+<!--MODAL DELETE INVOICE-->
+
+<div class="modal-form-outer">
+  <div class="modal-form">
+
+      <div class="modal-header-outer">
+          <div class="header-column1 hc1-delete-tech">
+              <img src="assets/img/header-delete-icon.svg" width="40" class="img-circle-modal-header" alt="User Image">
+          </div>
+          <div class="header-column2">Delete Invoice?</div>
+      </div>
+
+      <div class="modal-footer">
+          <div ng-click="$close()" class="modal-buttons cancel-button">
+              <i class="fa fa-times" aria-hidden="true"></i>
+              No
+          </div>
+          <div ng-click="deleteInvoice()" class="modal-buttons delete-button">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              Yes
+          </div>
+      </div>
+
+  </div>
+</div>

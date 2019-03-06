@@ -22,6 +22,18 @@ import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboar
 import { LoginComponent } from './components/login/login.component';
 import { RegisterationPageComponent } from './components/login/registeration-page/registeration-page.component';
 import { ForgotLoginPageComponent } from './components/login/forgot-login-page/forgot-login-page.component';
+import { SidebarComponent } from './components/navbar/sidebar/sidebar.component';
+import { TopbarComponent } from './components/navbar/topbar/topbar.component';
+import { GaugeComponent } from './components/common/gauge/gauge.component';
+import { DatePickerComponent } from './components/common/date-picker/date-picker.component';
+import { GoalsComponent } from './components/goals/goals.component';
+import { GoalsDashboardComponent } from './components/goals/goals-dashboard/goals-dashboard.component';
+import { GoalsListComponent } from './components/goals/goals-list/goals-list.component';
+import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
+import { ShopProfileInfoComponent } from './components/shop-profile/shop-profile-info/shop-profile-info.component';
+import { ShopProfileTechniciansComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians.component';
+import { ShopProfileDashboardComponent } from './components/shop-profile/shop-profile-dashboard/shop-profile-dashboard.component';
+import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invoice-delete.component';
 
 
 
@@ -46,7 +58,19 @@ import { ForgotLoginPageComponent } from './components/login/forgot-login-page/f
     InvoiceDashboardComponent,
     LoginComponent,
     RegisterationPageComponent,
-    ForgotLoginPageComponent
+    ForgotLoginPageComponent,
+    SidebarComponent,
+    TopbarComponent,
+    GaugeComponent,
+    DatePickerComponent,
+    GoalsComponent,
+    GoalsDashboardComponent,
+    GoalsListComponent,
+    ShopProfileComponent,
+    ShopProfileInfoComponent,
+    ShopProfileTechniciansComponent,
+    ShopProfileDashboardComponent,
+    InvoiceDeleteComponent
   ],
   imports: [
     BrowserModule,

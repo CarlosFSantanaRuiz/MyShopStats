@@ -1,3 +1,69 @@
-<p>
-  tech-dashboard works!
-</p>
+<div class="shop-dashboard-header">
+  <div class="col-md-8 col-shop-header-left">
+      <img class="img-circle" src="assets/img/tech-dash-icon.svg" alt="User profile picture">
+      <div class="shop-header">Tech Dashboard</div>
+  </div>
+  <div class="col-md-4">
+      <app-date-picker></app-date-picker>
+  </div>
+</div>
+
+<div class="col-md-4">
+
+    <div class="tech-profile">
+  
+      <div class="dashboard-tech-stats-header">
+        <i class="fa fa-user tech-icons" aria-hidden="true"></i>
+        <span>Technician Profile</span>
+      </div>
+  
+      <img class="tech-dash-icon-img" src="assets/img/user-icon.svg" alt="Technician Image" />
+      <hr>
+      <select class="tech-name-dropdown" name="Technician" ng-model="technician"
+        ng-options="technician.firstName + ' ' + technician.lastName for technician in technicians">
+        <option>Tyler Whipple</option>
+        <option>Carlos</option>
+      </select>
+      <p class="tech-profile-type">Role</p>
+  
+      <div class="tech-row tech-row-1">
+        <img class="tech-daily-imgs" src="assets/img/daily-sales-icon.svg" height="60" width="60">
+        <div class="tech-daily-txt-outer">
+          <span class="tech-daily-title">Daily Sales</span>
+          <span class="tech-daily-num stats-green">$100</span>
+        </div>
+      </div>
+      <div class="tech-row tech-row-2">
+        <img class="tech-daily-imgs" src="assets/img/labor-icon.svg" height="60" width="60">
+        <div class="tech-daily-txt-outer">
+          <span class="tech-daily-title">Labor</span>
+          <span class="tech-daily-num stats-blue">$100</span>
+        </div>
+      </div>
+      <div class="tech-row tech-row-3">
+        <span class="tech-daily-imgs"><img class="tech-daily-parts-img" src="assets/img/car-icon-yellow.svg" height="60" width="60"></span>
+        <div class="tech-daily-txt-outer">
+          <span class="tech-daily-title">Parts</span>
+          <span class="tech-daily-num stats-yellow">$100</span>
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+  <!--<app-shop-chart class="col-md-8"></app-shop-chart> -->
+<!--Gauges-->
+<div class="col-lg-12 tech-gauge-outer-col">
+  <div class="col-md-3 tech-gauge-col">
+      <app-gauge [color]="'yellow'" [title]="'Productivity'"></app-gauge>
+  </div>
+  <div class="col-md-3 tech-gauge-col">
+      <app-gauge [color]="'red'" [title]="'Unit Count'"></app-gauge>
+  </div>
+  <div class="col-md-3 tech-gauge-col">
+      <app-gauge [color]="'green'" [title]="'Monthly Sales'"></app-gauge>
+  </div>
+  <div class="col-md-3 tech-gauge-col">
+      <app-gauge [color]="'blue'" [title]="'Avg Ro'"></app-gauge>
+  </div>
+</div>
