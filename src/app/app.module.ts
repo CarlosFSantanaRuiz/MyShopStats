@@ -41,6 +41,9 @@ import { ShopProfileDashboardComponent } from './components/shop-profile/shop-pr
 import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invoice-delete.component';
 
 
+// Services 
+import { ValidateService } from "./services/validate.service";
+import { AuthService } from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -84,7 +87,7 @@ import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invo
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
