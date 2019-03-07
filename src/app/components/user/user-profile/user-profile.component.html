@@ -1,3 +1,7 @@
-<p>
-  user-profile works!
-</p>
+<div *ngIf="userProfile">
+  <h2>Profile</h2>
+  <ul>
+    <li>Email: {{userProfile.email}}</li>
+    <li>Role: {{userProfile.role}}</li>
+  </ul>
+</div>

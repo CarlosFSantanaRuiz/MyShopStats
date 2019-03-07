@@ -39,11 +39,15 @@ import { ShopProfileInfoComponent } from './components/shop-profile/shop-profile
 import { ShopProfileTechniciansComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians.component';
 import { ShopProfileDashboardComponent } from './components/shop-profile/shop-profile-dashboard/shop-profile-dashboard.component';
 import { InvoiceDeleteComponent } from './components/invoice/invoice-delete/invoice-delete.component';
-
+import { UserComponent } from "../app/components/user/user.component";
+import { UserProfileComponent } from '../app/components/user/user-profile/user-profile.component';
 
 // Services 
 import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
+
+// Guard
+import { AuthGuard } from './guards/auth.guard'
 
 @NgModule({
   declarations: [
@@ -79,7 +83,9 @@ import { AuthService } from "./services/auth.service";
     ShopProfileInfoComponent,
     ShopProfileTechniciansComponent,
     ShopProfileDashboardComponent,
-    InvoiceDeleteComponent
+    InvoiceDeleteComponent,
+    UserComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +93,7 @@ import { AuthService } from "./services/auth.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

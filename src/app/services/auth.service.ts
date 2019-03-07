@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from  '@angular/common/http';
 import { map } from "rxjs/operators";
 import { User } from "../components/common/models/user";
 import { Router } from "@angular/router";
+import { Profile } from '../components/common/models/profile';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -25,12 +27,33 @@ export class AuthService {
     .pipe(map(res => res))
   }
 
+  loggedIn(){
+    return tokenNotExpired('id_token');
+  }
+
 
   authenticateUser(user){
     let header = new HttpHeaders();
     header.append('Content-Type', 'application/json');
     return this.http.post<User>('http://localhost:3000/users/authenticate', user, {headers: header})
       .pipe(map(res => res))
+  }
+
+  getProfile(){
+ 
+    this.loadToken();
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.authToken
+    });
+    return this.http.get<Profile>('http://localhost:3000/users/profile', {headers: header})
+      .pipe(map(res => res));
+  }
+
+
+  loadToken(){
+    const token = localStorage.getItem('id_token');
+    this.authToken = token
   }
 
   storeUserData(token, user){
