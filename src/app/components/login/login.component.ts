@@ -10,6 +10,8 @@ import { Router } from "@angular/router";
 export class LoginComponent implements OnInit {
   email: String;
   password: String;
+  
+
 
   constructor(
     private authService: AuthService,
@@ -25,7 +27,15 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
     this.authService.authenticateUser(user).subscribe(data => {
-      console.log(data)
+      if(data.success){
+        this.authService.storeUserData(data.token, data.user);
+        this.router.navigate(['user/12345/shop-dashboard'])
+      }else {
+        // Servers returns Wrong Password if error may want to do a flash message
+        console.log( data.msg);
+        this.router.navigate(['/login'])
+        
+      }
     });
     
   }
