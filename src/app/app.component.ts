@@ -9,12 +9,16 @@ import { AuthService } from "./services/auth.service";
 })
 
 export class AppComponent{
+
   constructor(
     private authService: AuthService
   ){
 
   }
 
+  isLoggedIn(){
+    this.authService.loggedIn ? true : false;
+  }
 
   
 }
