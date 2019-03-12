@@ -23,7 +23,7 @@
               <td class="table-center table-total-col" >updateTOtal</td>
               <td class="table-center table-small-col"><i ng-click="openDetailsInvoiceModal(invoice)" class="fa fa-external-link details-icon" aria-hidden="true"></i></td>
               <td class="table-center table-small-col"><i ng-click="openEditInvoiceModal(invoice)" class="fa fa-pencil edit-icon" aria-hidden="true"></i></td>
-              <td class="table-center table-small-col"><i ng-click="openDeleteInvoiceModal(invoice.id)" class="fa fa-trash delete-icon" aria-hidden="true"></i></td>
+              <td class="table-center table-small-col"><i (click)="toggleModal('deleteInvoice')" class="fa fa-trash delete-icon" aria-hidden="true"></i></td>
           </tr>
       </tbody>
   </table>

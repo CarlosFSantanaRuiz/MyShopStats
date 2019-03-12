@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-invoice-list',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice-list.component.css']
 })
 export class InvoiceListComponent implements OnInit {
-
+  @Output() notify: EventEmitter<string> = new EventEmitter;
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleModal(contentname) {
+    this.notify.emit(contentname);
+  }
 }

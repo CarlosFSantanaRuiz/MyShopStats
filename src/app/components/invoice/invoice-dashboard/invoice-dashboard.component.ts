@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice-dashboard.component.css']
 })
 export class InvoiceDashboardComponent implements OnInit {
-
+  openModal:string = '';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleModal(contentname) {
+    this.openModal = contentname;
   }
 
 }

@@ -8,10 +8,10 @@
 </div>
 
 <div class="col-md-12">
-  <app-invoice-list></app-invoice-list>
+  <app-invoice-list (notify)="toggleModal($event)"></app-invoice-list>
 
   <div class="shop-buttons-row">
-      <div ng-click="openAddInvoiceModal()" class="shop-button add-button invoice-btn">
+      <div (click)="toggleModal('addInvoice')" class="shop-button add-button invoice-btn">
           <i class="fa fa-plus" aria-hidden="true"></i>
           <span class="button-text-left">Add Invoice</span>
       </div>
@@ -19,6 +19,10 @@
 
 </div>
 
-<!--
-<app-invoice-delete></app-invoice-delete>
--->
+<app-modal *ngIf="openModal === 'addInvoice'">
+  <app-invoice-add (notify)="toggleModal($event)"></app-invoice-add>
+</app-modal>
+
+<app-modal *ngIf="openModal === 'deleteInvoice'">
+  <app-invoice-delete (notify)="toggleModal($event)"></app-invoice-delete>
+</app-modal>

@@ -17,21 +17,33 @@ export class HrsOperationEditComponent implements OnInit {
       this.timearray.push(i * 100);
       this.timearray.push((i * 100) + 30);
     }
+    console.log(this.timearray);
     return this.timearray;
   }
 
   amPmConvertItem(element) {
     var elementstring = element.toString();
-    var hour = 0;
-    var min = 0;
+    var hour;
+    var min;
     var ampm = 'AM';
-      if (elementstring.length === 3) {
+      if (elementstring.length <= 2) {
+        if (elementstring === '0') {
+          hour = '12';
+          min = '00';
+        }
+        if (elementstring === '30') {
+          hour = '12';
+          min = '30';
+        }
+      }
+      else if (elementstring.length === 3) {
         hour = elementstring.substring(0,1);
         min = elementstring.toString().substring(1, 3);
       } else {
         hour = elementstring.substring(0,2);
         min = elementstring.substring(2, 4);
       }
+
       if (hour > 12) {
         hour = hour - 12;
         ampm = 'PM';

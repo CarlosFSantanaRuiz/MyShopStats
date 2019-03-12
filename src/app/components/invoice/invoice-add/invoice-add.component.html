@@ -1,3 +1,152 @@
-<p>
-  invoice-add works!
-</p>
+<div class="modal-form-outer modal-invoice-form-outer">
+    <form name="addInvoiceForm" class="modal-form" novalidate="novalidate">
+
+        <div class="modal-header-outer mho-shop-info">
+            <div class="header-column1 add-invoice-header"><img src="../assets/img/header-invoice-icon.svg" width="40" class="img-circle-modal-header" alt="User Image"></div>
+            <div class="header-column2">Add Invoice</div>
+        </div>
+
+        <div class="modal-body-outer">
+            <div class="row">
+                <div class="column1">Invoice #</div>
+                <div class="column2">
+                    <input type="number" name="Invoice Number" placeholder='Enter Invoice Number' ng-model="invoice.invoiceNumber" class="input-form-text" ng-minlength="2" ng-maxlength="20" ng-required="true">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="column1">Billed Date</div>
+                <div class="column2">
+                    <p class="invoice-calendar-box">
+                      <!--
+                        <input type="text" class="input-form-text invoice-mod-calendar"/>
+                        <div class="invoice-calendar-button">
+                            <img class="invoice-calendar-icon" src="../assets/img/calendar-icon-small.svg">
+                        </div>
+                        -->
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="column1">Advisor</div>
+                <div class="column2">
+                    <select class="modal-form-select" style="width:95%" name="Advisor">
+                        <option>
+                            {{advisor.firstName + ' ' + advisor.lastName}}</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row row-exception">
+                <div class="column1">Exception(s)</div>
+                <div class="column2">
+
+                    <div ng-show="invoice.hasCheckSheet" class="exception-chip exception-chip-check" ng-click="HandleCheckSheetException()">
+                      <span>Checksheet</span>
+                      <span class="exception-cls-btn exception-check-btn"><i class="fa fa-check invoice-check-icon" aria-hidden="true"></i></span>
+                    </div>
+                    <div ng-show="!invoice.hasCheckSheet" class="exception-chip" ng-click="HandleCheckSheetException()">
+                      <span class="exception-text">Checksheet</span>
+                      <span class="exception-cls-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </div>
+
+                    <div ng-show="invoice.isTaxExempt" class="exception-chip exception-chip-check" ng-click="HandleTaxExemptException()">
+                      <span>Tax-Exempt</span>
+                      <span class="exception-cls-btn exception-check-btn"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                    <div ng-show="!invoice.isTaxExempt" class="exception-chip" ng-click="HandleTaxExemptException()">
+                      <span class="exception-text">Tax-Exempt</span>
+                      <span class="exception-cls-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </div>
+
+                    <div ng-show="invoice.isComeBack" class="exception-chip exception-chip-check" ng-click="HandleComebackException()">
+                      <span>Comeback</span>
+                      <span class="exception-cls-btn exception-check-btn"><i class="fa fa-check" aria-hidden="true"></i></span>
+                    </div>
+                    <div ng-show="!invoice.isComeBack" class="exception-chip" ng-click="HandleComebackException()">
+                      <span class="exception-text">Comeback</span>
+                      <span class="exception-cls-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+              <table class="invoice-mod-table" >
+                <thead>
+                  <tr>
+                    <th class="invoice-mod-th-total">Labor</th>
+                    <th class="invoice-mod-th-total">Parts</th>
+                    <th class="invoice-mod-th-total invoice-th-total">Total</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td class="invoice-mod-td-total"><input type="number" name="Labor" class="input-form-text invoice-mod-tb-input" placeholder="Enter Amount"></td>
+                    <td class="invoice-mod-td-total"><input type="number" name="Parts" class="input-form-text invoice-mod-tb-input" placeholder="Enter Amount"></td>
+                    <td class="invoice-mod-td-total"><span class="invoice-mod-total" >total</span></td>
+                  </tr>
+              </tbody>
+              </table>
+            </div>
+            <!--
+            <div class="row">
+              <table class="invoice-mod-table" >
+                <thead>
+                  <tr>
+                    <th class="invoice-mod-th invoice-mod-first">Payment Type</th>
+                    <th class="invoice-mod-th invoice-th-right-border">Amount</th>
+                    <th class="invoice-mod-td invoice-mod-plus"><span class="invoice-plus-btn"><i class="fa fa-plus" aria-hidden="true"></i><span></th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr class="invoice-mod-minus-row">
+                      <td class="invoice-mod-td invoice-mod-first">
+                          <select class="modal-form-select invoice-mod-select">
+                            <option >paymentOption</option>
+                          </select>
+                      </td>
+                      <td class="invoice-mod-td"><input type="number" name="Amount" class="input-form-text invoice-mod-tb-input"></td>
+                      <td class="invoice-mod-td invoice-mod-plus"><span class="invoice-minus-btn"><i class="fa fa-minus" aria-hidden="true"></i><span></td>
+                  </tr>
+              </tbody>
+              </table>
+            </div>
+            
+            <div class="row">
+              <table class="invoice-mod-table" >
+                <thead>
+                  <tr>
+                    <th class="invoice-mod-th invoice-mod-first">Technician(s)</th>
+                    <th class="invoice-mod-th invoice-th-right-border">Hrs</th>
+                    <th class="invoice-mod-td invoice-mod-plus"><span class="invoice-plus-btn" ng-click="addNewTechnician()"><i class="fa fa-plus" aria-hidden="true"></i><span></th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr class="invoice-mod-minus-row">
+                      <td class="invoice-mod-td invoice-mod-first">
+                          <select class="modal-form-select invoice-mod-select">
+                            <option>technician.firstName technician.lastName</option>
+                          </select>
+                      </td>
+                      <td class="invoice-mod-td"><input type="number" name="Hours" class="input-form-text invoice-mod-tb-input"></td>
+                      <td class="invoice-mod-td invoice-mod-plus"><span class="invoice-minus-btn"><i class="fa fa-minus" aria-hidden="true"></i><span></td>
+                  </tr>
+              </tbody>
+              </table>
+            </div>
+            -->
+        </div>
+
+        <div class="modal-footer">
+            <button class="modal-buttons cancel-button" (click)="closeModal()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Cancel
+            </button>
+            <button class="modal-buttons submit-button" ng-click="addInvoice()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                ADD
+            </button>
+        </div>
+    </form>
+</div>

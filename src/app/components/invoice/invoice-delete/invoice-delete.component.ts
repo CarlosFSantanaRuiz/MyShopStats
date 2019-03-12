@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-invoice-delete',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice-delete.component.css']
 })
 export class InvoiceDeleteComponent implements OnInit {
-
+  @Output() notify: EventEmitter<string> = new EventEmitter;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeModal() {
+    this.notify.emit('');    
   }
 
 }

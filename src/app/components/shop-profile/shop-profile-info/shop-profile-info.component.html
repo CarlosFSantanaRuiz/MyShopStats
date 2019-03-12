@@ -1,27 +1,27 @@
 <div id="activity">
 
   <div class="col-md-7">
-    <app-shop-info [shop]="shopdata" (notify)="toggle($event)"></app-shop-info>
-    <app-contact-person [shop]="shopdata" (notify)="toggle($event)"></app-contact-person>
+    <app-shop-info [shop]="shopdata" (notify)="toggleModal($event)"></app-shop-info>
+    <app-contact-person [shop]="shopdata" (notify)="toggleModal($event)"></app-contact-person>
   </div>
 
   <div class="col-md-5" >
-    <app-hrs-operation [weeklySchedules]="weeklySchedules" (notify)="toggle($event)"></app-hrs-operation>
+    <app-hrs-operation [weeklySchedules]="weeklySchedules" (notify)="toggleModal($event)"></app-hrs-operation>
   </div>
 
 </div>
 
 <!--MODAL EDIT SHOP INFO -->
 <app-modal *ngIf="openModal === 'shopinfo'">
-    <app-shop-info-edit [shop]="shopdata" (notify)="onNotify($event)"></app-shop-info-edit>
+    <app-shop-info-edit [shop]="shopdata" (notify)="toggleModal($event)"></app-shop-info-edit>
 </app-modal>
 
 <!--MODAL EDIT CONTACT PERSON-->
 <app-modal *ngIf="openModal === 'contactperson'">
-    <app-contact-person-edit [shop]="shopdata" (notify)="onNotify($event)"></app-contact-person-edit>
+    <app-contact-person-edit [shop]="shopdata" (notify)="toggleModal($event)"></app-contact-person-edit>
 </app-modal>
 
 <!--MODAL EDIT HOURS OF OPERATION-->
 <app-modal *ngIf="openModal === 'hrsop'">
-    <app-hrs-operation-edit [weeklySchedules]="weeklySchedules" (notify)="onNotify($event)"></app-hrs-operation-edit>
+    <app-hrs-operation-edit [weeklySchedules]="weeklySchedules" (notify)="toggleModal($event)"></app-hrs-operation-edit>
 </app-modal>

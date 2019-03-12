@@ -83,11 +83,8 @@ export class ShopProfileInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(contentname) {
+  toggleModal(contentname) {
     this.openModal = contentname;
   }
 
-  onNotify(message:string):void {
-    this.openModal = '';
-  }
 }
