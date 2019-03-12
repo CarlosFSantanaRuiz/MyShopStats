@@ -1,0 +1,55 @@
+<!--Shop Info Box-->
+<div class="box box-default">
+    <div class="main-shopinfo-col-head hrs-op-header">
+        <div class="main-shopinfo-header-title">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>Hours of Operation</span>
+        </div>
+        <div (click)="toggle('hrsop')" class="main-shopinfo-edit-btn hrs-op-edit-btn"
+                data-widget="collapse">
+            <i class="fa fa-pencil"></i>
+        </div>
+    </div>
+    <!-- /.box-header -->
+
+    <div class="box-body">
+
+        <table class="table table-striped table-height">
+
+            <tr>
+                <th class="hrs-op-table-header hrs-op-days-header">
+                    <span class="hrs-op-edit-header"><i class="fa fa-calendar-times-o" aria-hidden="true"></i>Day</span>
+                </th>
+                <th class="hrs-op-table-header">
+                    <span class="hrs-op-edit-header"><i class="fa fa-clock-o" aria-hidden="true"></i>Open</span>
+                </th>
+                <th class="hrs-op-table-header">
+                    <span class="hrs-op-edit-header"><i class="fa fa-clock-o" aria-hidden="true"></i>Close</span>
+                </th>
+            </tr>
+
+            <tr *ngFor="let weeklySchedule of weeklySchedules">
+                <th class="shop-info-left">
+
+                    <div class="hrs-op-inactive-btn" [ngClass]="weeklySchedule.schedule.start > 0 ? 'hrs-op-active-btn' : ''">
+                        <span>{{weeklySchedule.day.split('')[0].toUpperCase()}}</span>
+                    </div>
+
+                </th>
+                <td class="hrs-op-center" *ngIf="weeklySchedule.schedule.start > 0">
+                    <span data-ng-show="schedule">{{amPmConvertItem(weeklySchedule.schedule.start)}}</span>
+                </td>
+                <td class="hrs-op-center" *ngIf="weeklySchedule.schedule.start === 0">
+                        <span>CLOSED</span>
+                </td>
+                <td class="hrs-op-center" *ngIf="weeklySchedule.schedule.end > 0">
+                    <span data-ng-show="schedule">{{amPmConvertItem(weeklySchedule.schedule.end)}}</span>
+                </td>
+                <td class="hrs-op-center" *ngIf="weeklySchedule.schedule.end === 0">
+                        <span>CLOSED</span>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>

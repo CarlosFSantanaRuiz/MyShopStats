@@ -47,7 +47,14 @@ import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
 
 // Guard
-import { AuthGuard } from './guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard';
+import { ShopInfoComponent } from './components/shop-profile/shop-profile-info/shop-info/shop-info.component';
+import { ContactPersonComponent } from './components/shop-profile/shop-profile-info/contact-person/contact-person.component';
+import { HrsOperationComponent } from './components/shop-profile/shop-profile-info/hrs-operation/hrs-operation.component';
+import { HrsOperationEditComponent } from './components/shop-profile/shop-profile-info/hrs-operation/hrs-operation-edit/hrs-operation-edit.component';
+import { ContactPersonEditComponent } from './components/shop-profile/shop-profile-info/contact-person/contact-person-edit/contact-person-edit.component';
+import { ShopInfoEditComponent } from './components/shop-profile/shop-profile-info/shop-info/shop-info-edit/shop-info-edit.component';
+import { ModalComponent } from './components/common/modal/modal.component'
 
 @NgModule({
   declarations: [
@@ -85,7 +92,14 @@ import { AuthGuard } from './guards/auth.guard'
     ShopProfileDashboardComponent,
     InvoiceDeleteComponent,
     UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ShopInfoComponent,
+    ContactPersonComponent,
+    HrsOperationComponent,
+    HrsOperationEditComponent,
+    ContactPersonEditComponent,
+    ShopInfoEditComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

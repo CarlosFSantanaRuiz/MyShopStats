@@ -1,0 +1,70 @@
+<div class="modal-dialog">
+    <div class="modal-form-outer">
+        <form name="editShopInfoForm" class="modal-form" novalidate="novalidate">
+            <div class="modal-back-row visible-xs-block">
+              <div class="back-button" ng-click="$close()">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span>Back</span>
+              </div>
+            </div>
+            <div class="modal-header-outer mho-shop-info">
+                <div class="header-column1 hc1-shop-info"><img src="assets/img/car-icon-yellow.svg" width="45"
+                                                               class="img-circle-modal-header" alt="User Image"></div>
+                <div class="header-column2">Edit Shop Info</div>
+            </div>
+    
+            <div class="modal-body-outer">
+    
+                <div form-validation="editShopInfoForm"></div>
+    
+                <div class="column1">Shop Name</div>
+                <div class="column2">
+                    <input type="text" name="Shop Name" ng-model="shop.shopName" class="input-form-text"
+                           ng-minlength="2" ng-maxlength="20" ng-required="true">
+                </div>
+                <div class="column1">Address</div>
+                <div class="column2">
+                    <input type="text" name="Address" ng-model="shop.address.street" class="input-form-text"
+                           ng-minlength="2" ng-maxlength="40" ng-required="true">
+                </div>
+                <div class="column1">City</div>
+                <div class="column2">
+                    <input type="text" name="City" ng-model="shop.address.city" class="input-form-text"
+                           ng-minlength="2" ng-maxlength="20" ng-required="true">
+                </div>
+                <div class="column1">State</div>
+                <div class="column2">
+                    <input type="text" name="State" ng-model="shop.address.state" class="input-form-text"
+                           ng-minlength="2" ng-maxlength="20" ng-required="true">
+                </div>
+                <div class="column1">Zip</div>
+                <div class="column2">
+                    <input type="text" name="Zip Code" ng-model="shop.address.zip" class="input-form-text"
+                           ng-minlength="5" ng-maxlength="10" ng-required="true">
+                </div>
+                <div class="column1">Labor Rate</div>
+                <div class="column2">
+                    <input type="text" name="Labor Rate" ng-model="shop.laborRate" class="input-form-text"
+                           ng-required="true">
+                </div>
+                <div class="column1">Tax</div>
+                <div class="column2">
+                    <input type="text" name="Sales Tax" ng-model="shop.salesTax" class="input-form-text"
+                           ng-required="true">
+                </div>
+            </div>
+    
+            <div class="modal-footer">
+                <div class="modal-buttons cancel-button hidden-xs" (click)='closeModal()'>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    Cancel
+                </div>
+                <button class="modal-buttons submit-button">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Save
+                </button>
+            </div>
+    
+        </form>
+      </div>
+    </div>

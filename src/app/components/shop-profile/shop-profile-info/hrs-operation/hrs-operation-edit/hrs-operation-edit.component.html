@@ -1,0 +1,79 @@
+<div class="modal-form-outer modal-form-outer-hrs-op">
+  <div class="modal-form modal-form-hrs-op">
+      <!--
+      <div class="modal-back-row visible-xs-block">
+        <div class="back-button">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          <span>Back</span>
+        </div>
+      </div>
+      -->
+      <div class="modal-header-outer modal-header-hrs-op">
+          <div class="header-column1 header-column1-hrs-op">
+            <img src="../assets/img/header-hrs-op-icon.svg" width="40" class="img-circle-modal-header" alt="User Image">
+          </div>
+          <div class="header-column2 header-column2-hrs-op">Edit Hours Of Operation</div>
+      </div>
+
+      <div class="modal-body-outer modal-body-outer-hrs-op">
+          <div class="table table-striped table-modal-hrs-op">
+              <div class="table-header-style-hours-of-operation">
+
+                  <div class="rows3-col1-header">
+                      <span class="hrs-op-edit-header">
+                          <i class="fa fa-calendar-times-o" aria-hidden="true"></i>Day
+                      </span>
+                  </div>
+                  <div class="rows3-col2-header">
+                      <span class="hrs-op-edit-header">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>Open
+                      </span>
+                  </div>
+                  <div class="rows3-col3-header">
+                      <span class="hrs-op-edit-header">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>Close
+                      </span>
+                  </div>
+
+                  <div class="box-body box-body-hrs-op">
+                      <div *ngFor="let weeklySchedule of weeklySchedules">
+                          <div class="rows3-col1">
+                              <div class="hrs-op-inactive-btn" [ngClass]="weeklySchedule.schedule.start > 0 ? 'hrs-op-active-btn' : ''">
+                                  <span>{{weeklySchedule.day.split('')[0].toUpperCase()}}</span>
+                              </div>
+                          </div>
+                          <div class="rows3-col2">
+                              <select class="modal-form-select" *ngIf="weeklySchedule.schedule.start > 0">
+                                  <option *ngFor="let start of timearray" [selected]="start === weeklySchedule.schedule.start">{{amPmConvertItem(start)}}</option>
+                              </select>
+                              <select class="modal-form-select modal-form-select-disabled" *ngIf="weeklySchedule.schedule.start === 0" disabled>
+                                  <option>CLOSED</option>
+                              </select>
+                          </div>
+                          <div class="rows3-col3">
+                              <select class="modal-form-select " *ngIf="weeklySchedule.schedule.start > 0">
+                                  <option *ngFor="let end of timearray" [selected]="end === weeklySchedule.schedule.end">{{amPmConvertItem(end)}}</option>
+                              </select>
+                              <select class="modal-form-select modal-form-select-disabled" *ngIf="weeklySchedule.schedule.start === 0" disabled>
+                                  <option>CLOSED</option>
+                              </select>
+                              <!--<app-dropdown [dropdownlist]="ampmarray"></app-dropdown>-->
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+          
+          <div class="modal-footer">
+              <button class="modal-buttons cancel-button" (click)='closeModal()'>
+                  <i class="fa fa-times" aria-hidden="true"></i>Cancel
+              </button>
+              <button class="modal-buttons submit-button" (click)="amPmConvert()">
+                  <i class="fa fa-check" aria-hidden="true"></i>Save
+              </button>
+          </div>
+
+  </div>
+</div>
+</div>
