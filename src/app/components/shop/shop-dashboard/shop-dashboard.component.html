@@ -10,10 +10,10 @@
     </div>
     
     <div class="col-md-3 shop-gauges-cols">
-      <app-gauge [color]="'yellow'" [title]="'Productivity'"></app-gauge>
-      <app-gauge [color]="'red'" [title]="'Unit Count'"></app-gauge>
-      <app-gauge [color]="'green'" [title]="'Monthly Sales'"></app-gauge>
-      <app-gauge [color]="'blue'" [title]="'Avg Ro'"></app-gauge>
+      <app-gauge [type]="'shop'" [title]="'Productivity'" [gaugedata]="productivitydata"></app-gauge>
+      <app-gauge [type]="'shop'" [title]="'Unit Count'" [gaugedata]="gaugedata"></app-gauge>
+      <app-gauge [type]="'shop'" [title]="'Monthly Sales'" [gaugedata]="gaugedata"></app-gauge>
+      <app-gauge [type]="'shop'" [title]="'Avg Ro'" [gaugedata]="gaugedata"></app-gauge>
   </div>
 <!--  <app-shop-chart class="col-md-9 shop-chart-outer"></app-shop-chart>-->
 
