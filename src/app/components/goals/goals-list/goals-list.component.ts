@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./goals-list.component.css']
 })
 export class GoalsListComponent implements OnInit {
-
+  goalsIsActive = 999;
   shopname = "Bill's Auto Shop";
   technicians = [{
     firstName: 'Tyler',
@@ -23,4 +23,9 @@ export class GoalsListComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  setSelected(goalsIsActive) {
+      this.goalsIsActive = goalsIsActive;
+      console.log(this.goalsIsActive);
+  };
 }

@@ -1,52 +1,75 @@
 <table class="table table-striped table-w-border table-height goals-table">
-  <thead class="table-header-style">
+    <thead class="table-header-style">
+        <tr>
+            <th class="left-table-col left-table goals-shop-tech-header goals-shop-hd">
+              <span class="goals-shop-header">SHOP/TECHNICIAN</span>
+            </th>
+            <th class="left-table">Productivity</th>
+            <th>Avg. RO</th>
+            <th>Monthly $</th>
+            <th>Daily $</th>
+            <th class="right-table-col">Unit Ct</th>
+        </tr>
+    </thead>
+    <tbody class="box-body">
+  
       <tr>
-          <th class="left-table-col left-table goals-shop-tech-header goals-shop-hd">
-            <span class="goals-shop-header">SHOP/TECHNICIAN</span>
-          </th>
-          <th class="left-table">Productivity</th>
-          <th>Avg. RO</th>
-          <th>Monthly $</th>
-          <th>Daily $</th>
-          <th class="right-table-col">Unit Ct</th>
-      </tr>
-  </thead>
-  <tbody class="box-body">
-
-    <tr>
-        <td class="left-table goals-shop-tech"
-        ng-click="setSelected(999)"
-        ng-class="{'goals-active-name': 999 === goalsIsActive}"
-        >
-          <img class="goals-img-shop" src="assets/img/car-icon-yellow.svg">
-          <span class="goals-shop-name">{{shopname}}</span>
-        </td>
-        <td ng-click="setSelected(999)" class="goals-col" ng-class="{'goals-active-row': 999 === goalsIsActive}">
-
-        </td>
-        <td ng-click="setSelected(999)" class="goals-col" ng-class="{'goals-active-row': 999 === goalsIsActive}">
-</td>
-        <td ng-click="setSelected(999)" class="goals-col" ng-class="{'goals-active-row': 999 === goalsIsActive}">
-</td>
-        <td class="stats-green" class="goals-col" ng-click="setSelected(999)" ng-class="{'goals-active-row': 999 === goalsIsActive}">$234</td>
-        <td class="stats-red" class="goals-col" ng-click="setSelected(999)" ng-class="{'goals-active-row': 999 === goalsIsActive}">$325</td>
-    </tr>
-    <tr *ngFor="let technician of technicians; index as i">
-        <td class="left-table goals-shop-tech goals-col">
-            <div>
-                <img class="goals-img-tech" src="assets/img/technician-{{i+1}}.svg" alt="User profile picture">
-            </div>
-            <span class="goals-tech-name">{{technician.firstName}} {{technician.lastName + " ("}} {{technician.role}})</span>
+          <td class="left-table goals-shop-tech"
+          (click)="setSelected(999)"
+          [ngClass]="999 === goalsIsActive ? 'goals-active-name' : ''"
+          >
+            <img class="goals-img-shop" src="assets/img/car-icon-yellow.svg">
+            <span class="goals-shop-name">{{shopname}}</span>
           </td>
-          <td ng-click="setSelected($index)" class="goals-col">
+          <td (click)="setSelected(999)" class="goals-col" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
+              <input class="stats-yellow goals-inactive-input" type="number" min="0" max="100" name="efficiency" 
+              (click)="setSelected(999)" 
+              [ngClass]="999 === goalsIsActive ? 'goals-active-input' : ''">
+          </td>
+          <td (click)="setSelected(999)" class="goals-col" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
+              <input class="stats-blue goals-inactive-input" type="number" min="0" name="avgro" 
+              (click)="setSelected(999)" 
+              [ngClass]="999 === goalsIsActive ? 'goals-active-input' : ''">
+          
             </td>
-            <td ng-click="setSelected($index)" class="goals-col">
+          <td (click)="setSelected(999)" class="goals-col" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
+              <input class="stats-green goals-inactive-input" type="number" min="0" name="monthsales" 
+              (click)="setSelected(999)" 
+              [ngClass]="999 === goalsIsActive ? 'goals-active-input' : ''">
+          </td>
+          <td class="stats-green goals-col" (click)="setSelected(999)" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">$234</td>
+          <td class="stats-red goals-col" (click)="setSelected(999)" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">$325</td>
+      </tr>
+      <tr *ngFor="let technician of technicians; index as i">
+          <td class="left-table goals-shop-tech goals-col"
+          (click)="setSelected(i)" 
+          [ngClass]="i === goalsIsActive ? 'goals-active-name' : ''" 
+          >
+              <div>
+                  <img class="goals-img-tech" [src]="'../assets/img/technician-' + (i+1) + '.svg'" alt="User profile picture">
+              </div>
+              <span class="goals-tech-name">{{technician.firstName}} {{technician.lastName + " ("}} {{technician.role}})</span>
             </td>
-            <td ng-click="setSelected($index)" class="goals-col">
-             </td>
-            <td class="stats-green" class="goals-col" ng-click="setSelected($index)" ng-class="{'goals-active-row': $index === goalsIsActive}">$23</td>
-            <td class="stats-red" class="goals-col" ng-click="setSelected($index)" ng-class="{'goals-active-row': $index === goalsIsActive}">$234</td>
-      
-</tr>
+            <td (click)="setSelected(i)" class="goals-col" [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">
+                <input class="stats-yellow goals-inactive-input" type="number" min="0" max="100" name="efficiency" 
+                (click)="setSelected(i)" 
+                [ngClass]="i === goalsIsActive ? 'goals-active-input' : ''" >
+              </td>
+              <td (click)="setSelected(i)" class="goals-col" [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">
+                  <input class="stats-blue goals-inactive-input" type="number" min="0" name="avgro" 
+                  (click)="setSelected(i)" 
+                  [ngClass]="i === goalsIsActive ? 'goals-active-input' : ''" >
+              </td>
+              <td (click)="setSelected(i)" class="goals-col" [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">
+                  <input class="stats-green goals-inactive-input" type="number" min="0" name="monthlysales" 
+                  (click)="setSelected(i)" 
+                  [ngClass]="i === goalsIsActive ? 'goals-active-input' : ''" >
+               </td>
+              <td class="stats-green goals-col" (click)="setSelected(i)" 
+              [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">$23</td>
+              <td class="stats-red goals-col" (click)="setSelected(i)" 
+              [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">$234</td>
+        
+  </tr>
   </tbody>
-</table>
+  </table>
