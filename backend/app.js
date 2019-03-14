@@ -24,6 +24,7 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 
 const users = require('./routes/users')
+const shops = require('./routes/shops')
 
 const port = 3000;
 
@@ -43,7 +44,9 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
+// Routes Used
 app.use('/users', users);
+app.use('/shops', shops);
 
 // Use index route for application
 app.get('/', (req, res) =>{
