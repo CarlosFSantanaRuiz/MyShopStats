@@ -20,7 +20,6 @@
     "body-parser": "*",
     "passport": "*",
     "passport-jwt": "*"
-
   },
   "author": "Carlos SantanaRuiz & Tyler Whipple",
   "license": "ISC",
