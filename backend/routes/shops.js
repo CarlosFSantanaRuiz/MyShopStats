@@ -14,7 +14,7 @@ router.post("/shop-new", passport.authenticate('jwt', {session:false}),(req,res,
         role: req.body.user.role
     }
     let newShop = new Shop({
-        ShopName: req.body.shop.ShopName,
+        shopName: req.body.shop.shopName,
         shopAddress: req.body.shop.shopAddress,
         shopCity: req.body.shop.shopCity,
         shopState: req.body.shop.shopState,

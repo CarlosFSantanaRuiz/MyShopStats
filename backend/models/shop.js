@@ -75,9 +75,10 @@ module.exports.addShop = function(newShop, user, callback) {
                     _id: user.userId,
                     shops: [{
                         _id: shop.id,
+                        name: newShop.shopName,
                         role: user.role
                     }]
-                }); 
+                });                                 
                 shopRole.save(callback); 
             } catch (err) {
                 throw err;
