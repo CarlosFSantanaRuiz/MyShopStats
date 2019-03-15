@@ -12,7 +12,8 @@
   <div class="col-md-12">
     <app-goals-list></app-goals-list>
     <div class="shop-buttons-row" >
-      <div class="shop-button add-button goals-save" ng-click="goalsForm.$valid && goalsForm.$dirty && saveShopGoal()">
+      <div class="shop-button add-button goals-save" 
+      (click)="saveGoals()">
         <i class="fa fa-check" aria-hidden="true"></i>
           <span class="button-text-left">Save Changes</span>
       </div>
@@ -20,10 +21,10 @@
         <i class="fa fa-times" aria-hidden="true"></i>
           <span class="button-text-left">Cancel</span>
       </div>
-      <div ng-show="goalnotification" class="goals-updated-text">
+      <div *ngIf="goalnotification" class="goals-updated-text">
         <i class="fa fa-check goal-updated-check" aria-hidden="true"></i>
-        <span>goalnotification</span>
-        <span class="goals-updated-dates">currentdt</span>
+        <span>Saved Successfully</span>
+        <span class="goals-updated-dates">{{currentdt}}</span>
       </div>
     </div>
 

@@ -2499,12 +2499,15 @@ svg.graph .triggerLines {
   border-radius: 4px;
   cursor: pointer;
 }
+.goals-inactive-input:focus {
+  border: none;
+}
 .goals-active-input {
   background: #fff;
   border: 2px solid RGBA(34, 45, 50, 0.28);
   cursor: pointer;
 }
-.goals-active-input:focus {
+ .goals-active-input:focus {
   border: 2px solid #0093b7;
   outline: 0;
 }

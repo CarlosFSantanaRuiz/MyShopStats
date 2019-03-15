@@ -30,8 +30,7 @@ export class InvoiceAddComponent implements OnInit {
       hasCheckSheet: false,
       isComeBack: false,
       labor: 0,
-      parts: 0,
-      total: 0
+      parts: 0
     }
   
   constructor() { }
@@ -51,9 +50,6 @@ export class InvoiceAddComponent implements OnInit {
   }
   HandleTaxExemptException() {
     this.invoice.isTaxExempt = !this.invoice.isTaxExempt;
-  }
-  addTotal(value){
-    this.invoice.total = this.invoice.labor + this.invoice.parts;
   }
 
 }

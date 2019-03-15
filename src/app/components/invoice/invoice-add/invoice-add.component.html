@@ -84,13 +84,13 @@
                 <tbody>
                   <tr>
                     <td class="invoice-mod-td-total">
-                        <input [(ngModel)]="invoice.labor" (ngModelChange)="addTotal()"
+                        <input [(ngModel)]="invoice.labor" (ngModelChange)="invoice.labor=$event"
                         type="number"  name="Labor" class="input-form-text invoice-mod-tb-input" placeholder="Enter Amount"></td>
                     <td class="invoice-mod-td-total">
-                        <input [(ngModel)]="invoice.parts" (ngModelChange)="addTotal()" 
+                        <input [(ngModel)]="invoice.parts" (ngModelChange)="invoice.parts=$event" 
                         type="number" name="Parts" class="input-form-text invoice-mod-tb-input" placeholder="Enter Amount"></td>
                     <td class="invoice-mod-td-total">
-                        <span class="invoice-mod-total" >{{invoice.total | currency}}</span></td>
+                        <span class="invoice-mod-total" >{{invoice.labor + invoice.parts | currency}}</span></td>
                   </tr>
               </tbody>
               </table>
