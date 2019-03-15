@@ -28,7 +28,7 @@ router.post("/register",(req,res,next) =>{
 
 
 
-// Login Route
+// User email & password Authentication 
 router.post('/authenticate',(req,res,next) =>{
     const email = req.body.email;
     const password = req.body.password;
@@ -61,14 +61,5 @@ router.post('/authenticate',(req,res,next) =>{
     });
 });
 
-// User Profile
-router.get('/profile', passport.authenticate('jwt', {session:false}),(req,res,next) =>{
-    res.json({
-        _id:req.user._id,
-        name:req.user.name,
-        email: req.user.email,
-        role: req.user.role
-    })
-});
 
 module.exports = router;
