@@ -1,5 +1,5 @@
 <div class="body-content">
-  <app-sidebar></app-sidebar>
+  <app-sidebar *ngIf="authService.loggedIn()"></app-sidebar>
   <div class="main-content">
       <app-topbar></app-topbar>
       <div class="main-content-inner">
