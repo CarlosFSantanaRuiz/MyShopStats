@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from  '@angular/common/http';
 import { map } from "rxjs/operators";
-import { User } from "../components/common/models/user";
+import { ShopRoles } from "../components/common/models/shop_roles";
 import { Router } from "@angular/router";
 import { Profile } from '../components/common/models/profile';
 import { tokenNotExpired } from 'angular2-jwt';
@@ -9,10 +9,9 @@ import { tokenNotExpired } from 'angular2-jwt';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  authToken: any;
-  user: any;
-
+export class ShopService {
+  private authToken: any;
+  private user: any;
 
   constructor(
     private http: HttpClient,
@@ -20,20 +19,21 @@ export class AuthService {
     ) { }
 
     loadToken(){
-        const token = localStorage.get('id_token');
+        const token = localStorage.getItem('id_token');
         this.authToken = token;
     }
 
-    getProfile(){
+    getShopList(){
+      try{
         this.loadToken();
         const header = new HttpHeaders({
           'Content-Type': 'application/json',
           'Authorization': this.authToken
         });
-        return this.http.get<Profile>('http://localhost:3000/users/profile', {headers: header})
+        return this.http.get<ShopRoles>('http://localhost:3000/shops/shop-list', {headers: header})
           .pipe(map(res => res));
+      }catch(err){
+        throw err;
       }
-
-
-      
+  };
 };

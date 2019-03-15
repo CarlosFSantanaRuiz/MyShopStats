@@ -52,13 +52,13 @@ Shop.addShop(newShop, user,(err, permissions) => {
 
 router.get("/shop-list", passport.authenticate('jwt', {session:false}),(req,res,next) =>{
     const userId = req.user._id;
-    ShopRoles.getShopsByUserId(userId,(err,shops)=>{
+    ShopRoles.getShopsByUserId(userId,(err,shopList)=>{
         if(err) throw err;
-        if(!shops){
+        if(!shopList){
             return res.json({success: false, msg: "No shops found"});
         }
         res.json({
-            shop_list: shops
+            shop_list: shopList.shops
         })
     });
 

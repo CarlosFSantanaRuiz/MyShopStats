@@ -45,6 +45,7 @@ import { UserProfileComponent } from '../app/components/user/user-profile/user-p
 // Services 
 import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
+import { ShopService } from "./services/shop.service";
 
 // Guard
 import { AuthGuard } from './guards/auth.guard';
@@ -107,7 +108,12 @@ import { ModalComponent } from './components/common/modal/modal.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [
+    ValidateService, 
+    AuthService, 
+    AuthGuard,
+    ShopService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 export interface ShopRoles{
-    _id: String;
-   shops: [{
+   shop_list: [{
        _id: String;
        role: String;
+       name: String;
    }]
 };
