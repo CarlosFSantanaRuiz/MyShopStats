@@ -64,11 +64,6 @@ const ShopSchema = mongoose.Schema({
 
 const Shop = module.exports = mongoose.model('Shop', ShopSchema);
 
-module.exports.getShopByUserId = function(shopId, callback) {
-    const query = {_id : shopId}
-    Shop.findById(query, callback);
-}
-
 
 module.exports.addShop = function(newShop, user, callback) {
         if(newShop.role === "admin" || newShop.role == "owner");
@@ -90,9 +85,3 @@ module.exports.addShop = function(newShop, user, callback) {
         });
 };
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-    bcrypt.compare(candidatePassword,hash, (err, isMatch)=>{
-        if(err) throw err;
-        callback(null, isMatch);
-    });
-};

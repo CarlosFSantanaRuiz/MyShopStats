@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database')
 // Models
 const Shop = require('../models/shop');
+const ShopRoles = require('../models/shop_roles');
 
 // Register Route
 router.post("/shop-new", passport.authenticate('jwt', {session:false}),(req,res,next) =>{
@@ -31,10 +32,9 @@ router.post("/shop-new", passport.authenticate('jwt', {session:false}),(req,res,
                 sunday: req.body.shop.sunday,
             }
         ]
-    });
+});
 
-
-// Check permissions and respond with message
+// ADD SHOP : Messages
 Shop.addShop(newShop, user,(err, permissions) => {
         if(err){
             res.json({success: false, msg: "something went wrong"})
@@ -49,6 +49,38 @@ Shop.addShop(newShop, user,(err, permissions) => {
 
 });
 
+
+router.get("/shop-list", passport.authenticate('jwt', {session:false}),(req,res,next) =>{
+    const userId = req.user._id;
+    ShopRoles.getShopsByUserId(userId,(err,shops)=>{
+        if(err) throw err;
+        if(!shops){
+            return res.json({success: false, msg: "No shops found"});
+        }
+        res.json({
+            shop_list: shops
+        })
+    });
+
+});
+
+
+/*
+TODO: IMPLEMENT
+// UPDATE SHOP : Messages
+Shop.editShop(updateShop, user,(err, permissions) => {
+    if(err){
+        res.json({success: false, msg: "something went wrong"})
+    }else {
+        if(permissions){                    
+            res.json({success: true, msg: 'shop updated'})
+        } else {                
+            res.json({success: false, msg: 'permissions denied'})
+        }
+    }
+});
+
+*/
 
 
 module.exports = router;

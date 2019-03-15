@@ -34,3 +34,7 @@ module.exports.addShopRole = function(newShopRole, callback) {
     }
 };
 
+module.exports.getShopsByUserId = function(userId, callback) {
+    const query = {_id : userId.toString()}
+    ShopRoles.findById(query, callback);
+};
