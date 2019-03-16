@@ -33,6 +33,19 @@ module.exports.addUser = function(newUser, callback) {
     });
 };
 
+// Generate salt when saving adding user
+module.exports.updateUser = function(newPassword, updateUser, callback) {
+    bcrypt.genSalt(10, (err, salt)=>{
+        bcrypt.hash(newPassword, salt, (err, hash)=>{
+            if(err) throw err;
+            updateUser.password = hash;
+            updateUser.resetPasswordToken = undefined;
+            updateUser.resetPasswordExpires = undefined;
+            updateUser.updateOne(callback);
+        });
+    });
+};
+
 module.exports.comparePassword = function(candidatePassword, hash, callback){
     bcrypt.compare(candidatePassword,hash, (err, isMatch)=>{
         if(err) throw err;

@@ -8,6 +8,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+mongoose.set('useCreateIndex', true);
 // Connect to Database
 mongoose.connect(config.database,{ useNewUrlParser: true });
 
