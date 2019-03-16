@@ -25,7 +25,7 @@ export class TopbarComponent implements OnInit {
       console.log(this.shopList); 
     });
   }else {
-    this.router.navigate(['login']);
+    
   }
     
   }
