@@ -23,7 +23,8 @@ const User = require('../models/user');
 // Register Route
 router.post("/register",(req,res,next) =>{
     let newUser = new User({
-        name: req.body.name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         password: req.body.password,
         role: req.body.role
@@ -31,9 +32,9 @@ router.post("/register",(req,res,next) =>{
 
     User.addUser(newUser, (err, user) => {
         if(err){
-            res.json({success: false, msg:'Failed to register user'})
+            res.json({success: false, msg:'Failed to register user.'})
         }else {
-            res.json({success: true, msg: 'User registered'})
+            res.json({success: true, msg: 'User registered.'})
         }
     });
 }); //END: Register Route
@@ -42,7 +43,7 @@ router.post("/register",(req,res,next) =>{
 
 
 // User email & password Authentication 
-router.post('/authenticate',(req,res,next) =>{
+router.post('/login',(req,res,next) =>{
     const email = req.body.email;
     const password = req.body.password;
 
@@ -63,6 +64,8 @@ router.post('/authenticate',(req,res,next) =>{
                 token: 'JWT '+ token, 
                 user: {
                 id: user._id,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 email: user.email,
                 role: user.role
             }

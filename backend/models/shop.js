@@ -28,38 +28,37 @@ const ShopSchema = mongoose.Schema({
         type: Number,
         requried: true
     },
-    hours_of_op: [
+    hoursOfOp:
         {
             monday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             tuesday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             wednesday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             thursday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             friday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             saturday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             },
             sunday: {
-                type: Number,
-                required: true
+                start: {type: Date, required: true},
+                end: {type: Date, required: true}
             }
         }
-    ]
 });
 
 const Shop = module.exports = mongoose.model('Shop', ShopSchema);

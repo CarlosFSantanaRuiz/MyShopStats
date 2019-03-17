@@ -4,6 +4,8 @@ export interface User {
     msg: String;
     user: {
         _id: String;
+        firstName: String;
+        lastName: String;
         email: String;
         role: String;
     }

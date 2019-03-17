@@ -30,7 +30,7 @@ export class ShopService {
           'Content-Type': 'application/json',
           'Authorization': this.authToken
         });
-        return this.http.get<ShopRoles>('http://localhost:3000/shops/shop-list', {headers: header})
+        return this.http.get<ShopRoles>('http://localhost:3000/shop/shop-list', {headers: header})
           .pipe(map(res => res));
       }catch(err){
         throw err;
