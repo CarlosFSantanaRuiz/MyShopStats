@@ -22,7 +22,6 @@ export class TopbarComponent implements OnInit {
     if(this.authService.loggedIn()){
     this.shopService.getShopList().subscribe(data => {
       this.shopList = data     
-      console.log(this.shopList); 
     });
   }else {
     

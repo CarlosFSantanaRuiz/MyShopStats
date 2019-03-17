@@ -54,7 +54,6 @@ router.post("/shop-new", passport.authenticate('jwt', {session:false}),(req,res,
             }
         
 });
-console.log(newShop);
 
 // ADD SHOP : Messages
 Shop.addShop(newShop, user,(err, permissions) => {

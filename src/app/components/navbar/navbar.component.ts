@@ -11,7 +11,6 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(Date.now());
     
   }
 
