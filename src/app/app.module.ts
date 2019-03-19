@@ -56,7 +56,8 @@ import { HrsOperationEditComponent } from './components/shop-profile/shop-profil
 import { ContactPersonEditComponent } from './components/shop-profile/shop-profile-info/contact-person/contact-person-edit/contact-person-edit.component';
 import { ShopInfoEditComponent } from './components/shop-profile/shop-profile-info/shop-info/shop-info-edit/shop-info-edit.component';
 import { ModalComponent } from './components/common/modal/modal.component';
-import { LoginTopbarComponent } from './components/navbar/login-topbar/login-topbar.component'
+import { LoginTopbarComponent } from './components/navbar/login-topbar/login-topbar.component';
+import { ShopProfileTechniciansFormComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians-form/shop-profile-technicians-form.component'
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { LoginTopbarComponent } from './components/navbar/login-topbar/login-top
     ContactPersonEditComponent,
     ShopInfoEditComponent,
     ModalComponent,
-    LoginTopbarComponent
+    LoginTopbarComponent,
+    ShopProfileTechniciansFormComponent
   ],
   imports: [
     BrowserModule,

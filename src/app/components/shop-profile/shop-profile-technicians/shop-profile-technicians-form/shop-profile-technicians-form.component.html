@@ -1,0 +1,47 @@
+<div class="modal-form-outer">
+    <form name="addTechnicianForm" class="modal-form" novalidate="novalidate">
+    
+      <div class="modal-header-outer mho-shop-info">
+            <div class="header-column1"><img src="../assets/img/header-technician-icon.svg" width="40" class="img-circle-modal-header" alt="User Image"></div>
+            <div class="header-column2">Add Technician</div>
+      </div>
+    
+      <div class="modal-body-outer">
+    
+          <div form-validation="addTechnicianForm"></div>
+    
+            <div class="column1">First Name</div>
+            <div class="column2">
+            <input type="text" name="First Name" ng-model="technician.firstName" class="input-form-text"
+                    ng-minlength="2" ng-maxlength="20" ng-required="true">
+            </div>
+    
+            <div class="column1">Last Name</div>
+            <div class="column2">
+                <input type="text" name="Last Name" ng-model="technician.lastName" class="input-form-text"
+                   ng-minlength="2" ng-maxlength="20" ng-required="true">
+            </div>
+    
+            <div class="column1 column1-techtype">Technician Type</div>
+            <div class="column2 column2-techtype">
+                <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="TECHNICIAN" checked>
+            <span class="radio-label">Technician</span>
+                <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="ADVISOR">
+            <span class="radio-label">Advisor</span>
+            </div>
+    
+        </div>
+    
+        <div class="modal-footer">
+            <button class="modal-buttons cancel-button" (click)="closeModal()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Cancel
+            </button>
+            <button ng-disabled="addTechnicianForm.$invalid" class="modal-buttons submit-button" ng-click="addTechnician()">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Submit
+            </button>
+        </div>
+    
+      </form>
+    </div>

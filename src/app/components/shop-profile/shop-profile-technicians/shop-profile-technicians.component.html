@@ -1,168 +1,36 @@
 <div class="col-md-12">
-  <table class="table table-striped table-w-border table-height">
-      <thead class="table-header-style">
-          <tr>
-              <th class="left-table-col left-table">#</th>
-              <th>Technician Name</th>
-              <th>Role</th>
-              <th class="table-center"><i class="fa fa-pencil" aria-hidden="true"></i></th>
-              <th class="right-table-col table-center"><i class="fa fa-trash" aria-hidden="true"></i></th>
-          </tr>
-      </thead>
-<tbody class="box-body">
-      <tr data-ng-repeat="technician in technicians">
-          <td class="left-table">{{$index + 1}}</td>
-          <td>{{technician.firstName}}
-              {{technician.lastName}}
-            </td>
-          <td class="first-letter-cap">{{technician.role}}</td>
-          <td class="table-center">
-              <i ng-click="openEditTechnicianModal(technician)" class="fa fa-pencil edit-icon" aria-hidden="true"></i>
-          </td>
-          <td class="table-center">
-              <i ng-click="openDeleteTechnicianModal(technician.id)" class="fa fa-trash delete-icon" aria-hidden="true"></i>
-          </td>
-</tbody>
-  </table>
+    <table class="table table-striped table-w-border table-height">
+        <thead class="table-header-style">
+            <tr>
+                <th class="left-table-col left-table">#</th>
+                <th>Technician Name</th>
+                <th>Role</th>
+                <th class="table-center"><i class="fa fa-pencil" aria-hidden="true"></i></th>
+                <th class="right-table-col table-center"><i class="fa fa-trash" aria-hidden="true"></i></th>
+            </tr>
+        </thead>
+        <tbody class="box-body">
+            <tr *ngFor="let technician of technicians; index as i">
+                <td class="left-table">{{i + 1}}</td>
+                <td>{{technician.firstName}} {{technician.lastName}}</td>
+                <td class="first-letter-cap">{{technician.role}}</td>
+                <td class="table-center">
+                    <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
+                </td>
+                <td class="table-center">
+                    <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+                </td>
+        </tbody>
+    </table>
 
-  <div class="shop-buttons-row">
-      <div ng-click="openAddTechnicianModal()" class="shop-button add-button">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-          <span class="button-text-left">Add Technician</span>
-
-      </div>
-  </div>
-</div>
-
-<!--MODAL ADD TECHNICIAN-->
-<script type="text/ng-template" id="add-technician.html">
-
-<div class="modal-form-outer">
-<form name="addTechnicianForm" class="modal-form" novalidate="novalidate">
-
-<div class="modal-header-outer mho-shop-info">
-      <div class="header-column1"><img src="/img/header-technician-icon.svg" width="40" class="img-circle-modal-header" alt="User Image"></div>
-      <div class="header-column2">Add Technician</div>
-</div>
-
-<div class="modal-body-outer">
-
-    <div form-validation="addTechnicianForm"></div>
-
-      <div class="column1">First Name</div>
-      <div class="column2">
-      <input type="text" name="First Name" ng-model="technician.firstName" class="input-form-text"
-              ng-minlength="2" ng-maxlength="20" ng-required="true">
-      </div>
-
-      <div class="column1">Last Name</div>
-      <div class="column2">
-          <input type="text" name="Last Name" ng-model="technician.lastName" class="input-form-text"
-             ng-minlength="2" ng-maxlength="20" ng-required="true">
-      </div>
-
-      <div class="column1 column1-techtype">Technician Type</div>
-      <div class="column2 column2-techtype">
-          <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="TECHNICIAN" checked>
-      <span class="radio-label">Technician</span>
-          <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="ADVISOR">
-      <span class="radio-label">Advisor</span>
-      </div>
-
-  </div>
-
-  <div class="modal-footer">
-      <button class="modal-buttons cancel-button" ng-click="$close()">
-          <i class="fa fa-times" aria-hidden="true"></i>
-          Cancel
-      </button>
-      <button ng-disabled="addTechnicianForm.$invalid" class="modal-buttons submit-button" ng-click="addTechnician()">
-          <i class="fa fa-check" aria-hidden="true"></i>
-          Submit
-      </button>
-  </div>
-
-</form>
-</div>
-</script>
-
-<!--MODAL EDIT TECHNICIAN-->
-<script type="text/ng-template" id="edit-technician.html">
-
-<div class="modal-form-outer">
-<form name="editTechnicianForm" class="modal-form">
-
-  <div class="modal-header-outer mho-shop-info">
-        <div class="header-column1 hc1-edit-tech"><img src="/img/header-technician-icon.svg" width="40" class="img-circle-modal-header" alt="User Image"></div>
-        <div class="header-column2">Edit Technician</div>
-  </div>
-
-  <div class="modal-body-outer">
-
-      <div form-validation="editTechnicianForm"></div>
-
-      <div class="column1">First Name</div>
-      <div class="column2">
-        <input type="text" name="First Name" ng-model="technician.firstName" class="input-form-text"
-               ng-minlength="2" ng-maxlength="20" ng-required="true">
-      </div>
-
-      <div class="column1">Last Name</div>
-      <div class="column2">
-        <input type="text" name="Last Name" ng-model="technician.lastName" class="input-form-text"
-               ng-minlength="2" ng-maxlength="20" ng-required="true">
-      </div>
-
-      <div class="column1 column1-techtype">Technician Type</div>
-      <div class="column2 column2-techtype">
-        <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="TECHNICIAN">
-        <span class="radio-label">Technician</span>
-        <input type="radio" style="float:left; margin-top:8px;" name="Technician Type" ng-model="technician.role" value="ADVISOR">
-        <span class="radio-label">Advisor</span>
-      </div>
-
-    </div>
-
-    <div class="modal-footer">
-        <div class="modal-buttons cancel-button" ng-click="$close()">
-            <i class="fa fa-times" aria-hidden="true"></i>
-            Cancel
-        </div>
-        <div ng-disabled="editTechnicianForm.$invalid" class="modal-buttons submit-button" ng-click="updateTechnician()">
-            <i class="fa fa-check" aria-hidden="true"></i>
-            Save
+    <div class="shop-buttons-row">
+        <div class="shop-button add-button" (click)="toggleModal('techForm')">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <span class="button-text-left">Add Technician</span>
         </div>
     </div>
-
-</form>
 </div>
-</script>
 
-<!--MODAL DELETE TECHNICIAN-->
-<script type="text/ng-template" id="delete-technician.html">
-
-<div class="modal-form-outer">
-  <div class="modal-form">
-
-      <div class="modal-header-outer">
-          <div class="header-column1 hc1-delete-tech">
-              <img src="/img/header-delete-icon.svg" width="40" class="img-circle-modal-header" alt="User Image">
-          </div>
-          <div class="header-column2">Delete Technician?</div>
-      </div>
-
-      <div class="modal-footer">
-          <div ng-click="$close()" class="modal-buttons cancel-button">
-              <i class="fa fa-times" aria-hidden="true"></i>
-              No
-          </div>
-          <div ng-click="deleteTechnician()" class="modal-buttons delete-button">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-              Yes
-          </div>
-
-      </div>
-
-  </div>
-</div>
-</script>
+<app-modal *ngIf="openModal === 'techForm'">
+    <app-shop-profile-technicians-form (notify)="toggleModal($event)"></app-shop-profile-technicians-form>
+</app-modal>
