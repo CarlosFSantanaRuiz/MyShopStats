@@ -55,7 +55,8 @@ import { HrsOperationComponent } from './components/shop-profile/shop-profile-in
 import { HrsOperationEditComponent } from './components/shop-profile/shop-profile-info/hrs-operation/hrs-operation-edit/hrs-operation-edit.component';
 import { ContactPersonEditComponent } from './components/shop-profile/shop-profile-info/contact-person/contact-person-edit/contact-person-edit.component';
 import { ShopInfoEditComponent } from './components/shop-profile/shop-profile-info/shop-info/shop-info-edit/shop-info-edit.component';
-import { ModalComponent } from './components/common/modal/modal.component'
+import { ModalComponent } from './components/common/modal/modal.component';
+import { LoginTopbarComponent } from './components/navbar/login-topbar/login-topbar.component'
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ModalComponent } from './components/common/modal/modal.component'
     HrsOperationEditComponent,
     ContactPersonEditComponent,
     ShopInfoEditComponent,
-    ModalComponent
+    ModalComponent,
+    LoginTopbarComponent
   ],
   imports: [
     BrowserModule,

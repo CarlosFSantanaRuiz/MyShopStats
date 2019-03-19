@@ -4,19 +4,22 @@
         <div class="login-outer">
             
             <img class="login-logo" src="assets/img/logo.svg" alt="Logo image"/>
+            
             <div class="login-slogan">Your Data. Your Stats.</div>
             
             <form (submit)="onLoginSubmit()">
                 <span class="username-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
                 <span class="password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                 <input class="input-form-text login-form-text" [(ngModel)]="email" 
-                    placeholder="email" type="email" name="email"/>
+                    placeholder="Email" type="email" name="email"/>
                 <input class="input-form-text login-form-text" [(ngModel)]="password"
-                    placeholder="password" type="password" name="password"/>
+                    placeholder="Password" type="password" name="password"/>
                 <button class="login-btn" name="login" type="submit">LOG IN</button>
             </form>
-    
+            
+            <a class="forgot-password" routerLink="/user/reset/:id">FORGOT PASSWORD?</a>
         </div>
+
     </div>
     
     </div>

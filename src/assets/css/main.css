@@ -768,13 +768,18 @@ input[type=number] {
 .main-content {
   margin-left: 225px;
 }
-.main-content-inner {
+.main-content-inner-login {
+  float: left;
+  width: 100%;
+}
+.main-content-inner-app {
   float: left;
   width: 100%;
   margin-top: 55px;
   padding-right: 10px;
   padding-left: 10px;
 }
+
 .col-100 {
   width:100%;
 }
@@ -799,6 +804,10 @@ input[type=number] {
     left: 225px;
     padding-right: 225px;
     padding-left:0px;
+}
+.nav-outer-login {
+  width: 100%;
+  background: #fff;
 }
 .img-circle {
   width: 75px;
@@ -3309,7 +3318,6 @@ margin-right:15px;
   padding: 5%;
   margin-top: 8%;
   width: 51%;
-  height: 453px;
   border-radius:6px;
 }
 
@@ -3348,9 +3356,21 @@ margin-right:15px;
   font-size: 32px;
   font-weight: 700;
   color: #0093B7;
-  margin-left: 4px;
   margin-bottom: 20px;
   margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+.forgot-slogan {
+  margin-top:0px;
+}
+.login-subtext {
+  font-size: 18px;
+  color: #757575;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 input.input-form-text.login-form-text {
   border-radius: 4px;

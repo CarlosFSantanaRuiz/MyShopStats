@@ -36,7 +36,8 @@
               [ngModel]="shop.monthlyRevenue" (click)="setSelected(999)" (ngModelChange)="shop.monthlyRevenue=$event"
               [ngClass]="999 === goalsIsActive ? 'goals-active-input' : ''">
           </td>
-          <td class="stats-green goals-col" (click)="setSelected(999)" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
+          <td class="stats-green goals-col" (click)="setSelected(999)" 
+              [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
                 {{shop.monthlyRevenue / shop.totalDaysWork | currency}}   
           </td>
           <td class="stats-red goals-col" (click)="setSelected(999)" [ngClass]="999 === goalsIsActive ? 'goals-active-row' : ''">
@@ -72,7 +73,6 @@
               [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">{{technician.goal.monthlyRevenue / technician.goal.totalDaysWork | currency}} </td>
               <td class="stats-red goals-col" (click)="setSelected(i)" 
               [ngClass]="i === goalsIsActive ? 'goals-active-row' : ''">{{(technician.goal.monthlyRevenue / technician.goal.avgro) | number:0}}</td>
-        
   </tr>
   </tbody>
   </table>

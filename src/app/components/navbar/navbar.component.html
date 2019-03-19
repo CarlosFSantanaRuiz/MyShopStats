@@ -1,9 +1,7 @@
-<div class="body-content">
-  <app-sidebar *ngIf="authService.loggedIn()"></app-sidebar>
-  <div class="main-content">
-      <app-topbar></app-topbar>
-      <div class="main-content-inner">
-      <router-outlet></router-outlet>
-    </div>
+<div [ngClass]="authService.loggedIn() ? 'main-content' : ''">
+  <app-login-topbar *ngIf="!authService.loggedIn()"></app-login-topbar>
+  <app-topbar *ngIf="authService.loggedIn()"></app-topbar>
+  <div [ngClass]="authService.loggedIn() ? 'main-content-inner-app' : 'main-content-inner-login'">
+    <router-outlet></router-outlet>
   </div>
-  </div>
+</div>
