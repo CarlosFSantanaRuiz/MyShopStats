@@ -58,7 +58,7 @@ import { ShopInfoEditComponent } from './components/shop-profile/shop-profile-in
 import { ModalComponent } from './components/common/modal/modal.component';
 import { LoginTopbarComponent } from './components/navbar/login-topbar/login-topbar.component';
 import { ShopProfileTechniciansFormComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians-form/shop-profile-technicians-form.component';
-import { ResetLoginPageComponent } from './components/login/reset-login-page/reset-login-page.component'
+import { ResetLoginPageComponent } from './components/login/reset-login-page/reset-login-page.component';
 
 @NgModule({
   declarations: [

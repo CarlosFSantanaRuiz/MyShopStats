@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from "@angular/router";
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-forgot-login-page',
@@ -8,6 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./forgot-login-page.component.css']
 })
 export class ForgotLoginPageComponent implements OnInit {
+
   email: String = '';
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -18,6 +20,8 @@ export class ForgotLoginPageComponent implements OnInit {
     this.authService.onForgotRequest(this.email).subscribe(data => {
         if(data.success == true){
           this.router.navigate(['login'])
+        }else {
+
         }
     });
   };
