@@ -65,7 +65,7 @@ const Shop = module.exports = mongoose.model('Shop', ShopSchema);
 
 
 module.exports.addShop = function(newShop, user, callback) {
-        if(newShop.role === "admin" || newShop.role == "owner");
+        if(newShop.role === "admin" || newShop.role === "owner");
             // Save shop and create the role
             newShop.save(function(err,shop) {
             try {
