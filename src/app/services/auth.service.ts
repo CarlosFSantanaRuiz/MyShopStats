@@ -5,6 +5,8 @@ import { User } from "../components/common/models/user";
 import { Router } from "@angular/router";
 import { Profile } from '../components/common/models/profile';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Message } from "../components/common/models/messages";
+import { ResetToken } from "../components/common/models/resetToken";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
   authToken: any;
   user: any;
-
+  message: Message;
 
   constructor(
     private http: HttpClient,
@@ -67,4 +69,34 @@ export class AuthService {
     localStorage.clear();
     this.router.navigate(['login'])
   }
+
+  // RESET PASSWORD
+
+  onForgotRequest(email){
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<Message>('http://localhost:3000/user/forgot', {email: email}, {headers: header})
+      .pipe(map(res => res));
+  };
+
+  onResetTokenRequest(token){
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.get<ResetToken>('http://localhost:3000/user/reset/'+ token, {headers: header})
+      .pipe(map(res => res));
+  };
+
+  onResetPassword(password,confirm,token){
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    const resetRequest = {password: password, confirm: confirm, token: token}
+    return this.http.post<Message>('http://localhost:3000/user/reset/' + token, resetRequest, {headers: header})
+      .pipe(map(res => res));
+  };
+
+  // END: RESET PASSWORD
+
 }

@@ -3,11 +3,11 @@
       <div class="login-outer">
           <div class="login-slogan forgot-slogan">Forgot Your Password?</div>
           <div class="login-subtext">We have you covered! Enter your email on file and we will send you a reset link.</div>
-          <form>
+          <form (submit)="onSubmit()">
               <span class="username-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
               <input class="input-form-text login-form-text"
-                  placeholder="Enter Your Email" type="email" name="email"/>
-              <button class="login-btn" name="login" type="submit">RESET</button>
+                  placeholder="Enter Your Email" type="email" name="email" [(ngModel)]="email"/>
+              <button class="login-btn" name="login" type="submit">Submit</button>
           </form>
       </div>
   </div>

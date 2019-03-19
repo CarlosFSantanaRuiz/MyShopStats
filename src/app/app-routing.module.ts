@@ -8,7 +8,7 @@ import { GoalsDashboardComponent } from './components/goals/goals-dashboard/goal
 import { InvoiceDashboardComponent } from './components/invoice/invoice-dashboard/invoice-dashboard.component';
 import { ShopProfileDashboardComponent } from './components/shop-profile/shop-profile-dashboard/shop-profile-dashboard.component';
 import { UserComponent } from "./components/user/user.component";
-
+import { ResetLoginPageComponent } from "./components/login/reset-login-page/reset-login-page.component";
 // Guards
 
 import { AuthGuard } from "./guards/auth.guard";
@@ -24,7 +24,8 @@ const routes: Routes = [
   {path: 'user/:id/shop-profile', component: ShopProfileDashboardComponent, canActivate:[AuthGuard]},
   {path: '', redirectTo: 'user/:id/shop-dashboard', pathMatch: 'full', canActivate:[AuthGuard]},
   {path: 'user-profile', component: UserComponent, canActivate:[AuthGuard]},
-  {path: 'user/reset/:id', component: ForgotLoginPageComponent}
+  {path: 'user/reset/:id', component: ResetLoginPageComponent},
+  {path: 'user/forgot-login', component: ForgotLoginPageComponent}
 ];
 
 @NgModule({

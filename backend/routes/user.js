@@ -148,7 +148,10 @@ router.post('/forgot', function(req, res, next) {
             msg: "Password reset token is invalid or has expried."
         });
       }
-      res.json({token: req.params.token});
+      res.json({
+        token: req.params.token,
+        email: user.email
+      });
     });
   });  // END: GET Reset Password
 
