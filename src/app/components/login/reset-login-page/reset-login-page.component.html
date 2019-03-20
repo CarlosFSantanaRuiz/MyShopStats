@@ -4,13 +4,15 @@
           <div class="login-slogan forgot-slogan">Reset Your Password</div>
           <div class="login-subtext">We have you covered! Enter your new password.</div>
           <form (submit)="onSubmit()">
-              <span class="username-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <span class="password-icon password-icon-top"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                <span class="password-icon"><i class="fa fa-lock" aria-hidden="true"></i></span>
               <input class="input-form-text login-form-text"
                   placeholder="New Password" type="password" name="password" [(ngModel)]="password"/>
               <input class="input-form-text login-form-text"
                   placeholder="Confirm Password" type="password" name="confirmPassword" [(ngModel)]="confirmPassword"/>
               <button class="login-btn" name="login" type="submit">RESET</button>
           </form>
+          <app-error-message *ngIf="errormsg != ''" [header]="errorheader" [msg]="errormsg"></app-error-message>
       </div>
   </div>
 </div>

@@ -9,6 +9,9 @@ import { Router } from "@angular/router";
   styleUrls: ['./reset-login-page.component.css']
 })
 export class ResetLoginPageComponent implements OnInit {
+  errorheader: String = 'Oh No There Was An Issue';
+  errormsg: String = '';
+
   private password: String = '';
   private confirmPassword: String ='';
   private token: String = '';
@@ -28,7 +31,7 @@ export class ResetLoginPageComponent implements OnInit {
       if(data.success == true){
         this.router.navigate(['login']);
       } else {
-        console.log(data.msg);
+        this.errormsg=data.msg;
       }
     });
   };

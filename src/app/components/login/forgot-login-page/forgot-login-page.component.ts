@@ -9,8 +9,10 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./forgot-login-page.component.css']
 })
 export class ForgotLoginPageComponent implements OnInit {
-
+  errorheader: String = 'There Appears To Be An Issue';
+  errormsg: String = '';
   email: String = '';
+  
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -21,7 +23,7 @@ export class ForgotLoginPageComponent implements OnInit {
         if(data.success == true){
           this.router.navigate(['login'])
         }else {
-
+          this.errormsg = data.msg;
         }
     });
   };

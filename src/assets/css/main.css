@@ -3398,11 +3398,14 @@ input.input-form-text.login-form-text:focus {
   margin-top: 14px;
   margin-left: 25px;
 }
+
 .password-icon {
   position: absolute;
   color: #AEAEAC;
-  font-size: 18px;
-  margin-top: 91px;
-  margin-left: 26px;
+  font-size: 21px;
+  margin-top: 89px;
+  margin-left: 28px;
 }
-
+.password-icon-top {
+  margin-top: 12px;
+}
