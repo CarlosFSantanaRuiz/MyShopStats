@@ -58,7 +58,7 @@ router.post("/shop-new", passport.authenticate('jwt', {session:false}),(req,res,
 // ADD SHOP : Messages
 Shop.addShop(newShop, user,(err, permissions) => {
         if(err){
-            res.json({success: false, msg: "Something went wrong."})
+            res.json({success: false, msg: "Shop Already Exists."})
         }else {
             if(permissions){                    
                 res.json({success: true, msg: 'Shop added.'})

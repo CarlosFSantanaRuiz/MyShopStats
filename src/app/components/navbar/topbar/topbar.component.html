@@ -6,8 +6,11 @@
   <div class="user-icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
   <div *ngIf="authService.loggedIn()" id="single-button" type="button" class="shop-dropdown" uib-dropdown-toggle
           ng-disabled="disabled">
-      <img class="shop-dropdown-img" src="assets/img/car-icon-yellow.svg" alt="User profile picture">
-      <span class="shop-dropdown-text">{{getShopName}}</span>
+      <img  class="shop-dropdown-img" src="assets/img/car-icon-yellow.svg" alt="User profile picture">
+      <span class="shop-dropdown-text"></span>
+      <div *ngFor="let shop of shopRoles">
+          <p>{{shop.name}}</p>
+      </div>
   </div>
 
   <!--DROPDOWN STILL NEEDS CONFIGURING -->
