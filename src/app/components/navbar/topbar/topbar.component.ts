@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../../services/auth.service";
-import { Router } from "@angular/router";
 import { ShopService } from "../../../services/shop.service";
 
 @Component({
@@ -9,24 +8,25 @@ import { ShopService } from "../../../services/shop.service";
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  getShopName = "Bill's Auto Shop";
+  getShopName = "";
   private shopRoles = [];
   constructor(
     private authService: AuthService,
-    private router: Router,
     private shopService: ShopService
     ) { }
 
   ngOnInit() {
-    if(this.authService.loggedIn()){
     this.shopService.getShopList().subscribe(data => {
+      if(!data.shop_list){
+        this.getShopName = "No Shops Found"
+      }
+      else {
       data.shop_list.forEach(element => {
         this.shopRoles.push(element);
       });    
+    };
     });
-  } 
   
-    
   }
 
   logOut(){
