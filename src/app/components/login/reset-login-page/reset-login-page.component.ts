@@ -9,8 +9,9 @@ import { Router } from "@angular/router";
   styleUrls: ['./reset-login-page.component.css']
 })
 export class ResetLoginPageComponent implements OnInit {
-  errorheader: String = 'Oh No There Was An Issue';
-  errormsg: String = '';
+  success: Boolean;
+  header: String;
+  msg: String = '';
 
   private password: String = '';
   private confirmPassword: String ='';
@@ -28,10 +29,15 @@ export class ResetLoginPageComponent implements OnInit {
 
   onSubmit(){
     this.authService.onResetPassword(this.password, this.confirmPassword, this.token).subscribe(data => {
+      this.success = data.success;
+      this.msg = data.msg;
       if(data.success == true){
-        this.router.navigate(['login']);
+        this.header = "You Are All Set"
+        setTimeout(() => {
+          this.router.navigate(['login']);
+        }, 5000);
       } else {
-        this.errormsg=data.msg;
+        this.header = "Oh No There Was An Issue"
       }
     });
   };

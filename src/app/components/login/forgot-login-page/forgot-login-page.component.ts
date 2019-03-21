@@ -9,8 +9,10 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./forgot-login-page.component.css']
 })
 export class ForgotLoginPageComponent implements OnInit {
-  errorheader: String = 'There Appears To Be An Issue';
-  errormsg: String = '';
+  success: Boolean;
+  header: String;
+  msg: String = '';
+
   email: String = '';
   
   constructor(private authService: AuthService, private router: Router) { }
@@ -20,10 +22,12 @@ export class ForgotLoginPageComponent implements OnInit {
 
   onSubmit(){
     this.authService.onForgotRequest(this.email).subscribe(data => {
+      this.success = data.success;
+      this.msg = data.msg;
         if(data.success == true){
-          this.router.navigate(['login'])
+          this.header = "You're Ready For A Reset"
         }else {
-          this.errormsg = data.msg;
+          this.header = "There Is a Log In Issue"
         }
     });
   };

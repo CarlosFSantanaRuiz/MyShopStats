@@ -1,23 +1,35 @@
-.error-message-icon {
-    color: #e89f32;
-    margin-right:10px;
-}
-
-.error-message-base {
+.message-base {
     margin-top: 20px;
     float: left;
     text-align: center;
     width: 100%;
     color: #ffffff;
     font-size: 16px;
-    background: #dd4c39;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     padding: 6px;
     text-transform:capitalize;
 }
 
-.error-message-desc {
+.success-message-icon {
+    color: #ffffff;
+    margin-right:10px;
+}
+
+.success-message-base {
+    background: #00a65a;
+}
+
+.error-message-icon {
+    color: #e89f32;
+    margin-right:10px;
+}
+
+.error-message-base {
+    background: #dd4c39;
+}
+
+.message-desc {
     padding: 8px;
     padding-bottom: 10px;
     float: left;

@@ -18,7 +18,7 @@
             </form>
             
             <a class="forgot-password" routerLink="/user/forgot-login">FORGOT PASSWORD?</a>
-            <app-error-message *ngIf="errormsg != ''" [header]="errorheader" [msg]="errormsg"></app-error-message>
+            <app-notification *ngIf="msg != ''" [success]="success" [header]="header" [msg]="msg"></app-notification>
         </div>
 
     </div>

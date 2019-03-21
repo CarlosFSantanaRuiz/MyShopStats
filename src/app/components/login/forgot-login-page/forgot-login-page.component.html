@@ -8,8 +8,8 @@
               <input class="input-form-text login-form-text"
                   placeholder="Enter Your Email" type="email" name="email" [(ngModel)]="email"/>
               <button class="login-btn" name="login" type="submit">Request Reset</button>
-              <app-error-message *ngIf="errormsg != ''" [header]="errorheader" [msg]="errormsg"></app-error-message>
-          </form>
+            </form>
+            <app-notification *ngIf="msg != ''" [success]="success" [header]="header" [msg]="msg"></app-notification>
       </div>
   </div>
 </div>

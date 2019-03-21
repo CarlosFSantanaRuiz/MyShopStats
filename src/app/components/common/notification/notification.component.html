@@ -1,0 +1,8 @@
+<div>
+    <div class="message-base" [ngClass]="success === true ? 'success-message-base' : 'error-message-base'">
+        <i *ngIf="success === true" class="fa fa-check success-message-icon"></i>
+        <i *ngIf="success === false" class="fa fa-exclamation-triangle error-message-icon"></i>
+        <span>{{header}}</span>
+    </div>
+    <div class="message-desc">{{msg}}</div>
+</div>

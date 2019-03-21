@@ -8,8 +8,10 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  errorheader: String = "There was a Log In Issue";
-  errormsg: String = '';
+  success: Boolean;
+  header: String = "There Is a Log In Issue";
+  msg: String = '';
+  
   email: String;
   password: String;
   
@@ -31,7 +33,8 @@ export class LoginComponent implements OnInit {
         this.authService.storeUserData(data.token, data.user);
         this.router.navigate(['user/12345/shop-dashboard'])
       }else {
-        this.errormsg = data.msg;
+        this.success = data.success;
+        this.msg = data.msg;
         this.router.navigate(['/login'])
       }
     });
