@@ -3321,6 +3321,10 @@ margin-right:15px;
   border-radius:6px;
 }
 
+.registration-outer {
+  margin-top:0px;
+}
+
 .login-btn {
   border-radius: 4px;
   outline: 0;
@@ -3372,13 +3376,14 @@ margin-right:15px;
   width: 100%;
   text-align: center;
 }
-input.input-form-text.login-form-text {
-  border-radius: 4px;
+
+input.input-form-text.login-form-text, 
+input.input-form-text.registration-form {
   width: 100%;
   padding: 10px;
   padding-left: 60px;
   padding-right: 25px;
-  color: #aeaeac;
+  color: #757575;
   border: 2px solid #e9e8e6;
   font-size: 20px;
   font-weight: 700;
@@ -3386,9 +3391,43 @@ input.input-form-text.login-form-text {
   margin-bottom: 24px;
 }
 
-input.input-form-text.login-form-text:focus {
+input.input-form-text.login-form-text:focus,
+input.input-form-text.registration-form:focus
+{
     border: 2px solid #aeaeac;
     outline: 0;
+}
+
+input.input-form-text.registration-form {
+  width: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  color: #AEAEAC;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.reg-username-icon {
+  font-size:16px;
+  margin-left: 24px;
+}
+.reg-password-icon {
+  font-size: 20px;
+  margin-top: 8px;
+  margin-left: 26px;
+}
+
+.password-icon {
+  font-size: 21px;
+  margin-top: 25px;
+  margin-left: 28px;
 }
 
 .username-icon {
@@ -3409,3 +3448,23 @@ input.input-form-text.login-form-text:focus {
 .password-icon-top {
   margin-top: 12px;
 }
+
+/* Forgot Password */
+
+.forgot-password {
+  font-size: 18px;
+  font-weight: 400;
+  float: left;
+  text-align: center;
+  margin-bottom: 0px;
+  width: 100%;
+  color: #0093B7;
+  margin-left: 4px;
+  margin-top: 20px;
+}
+
+.forgot-password:hover {
+  text-decoration: none;
+  color: #0093B7;
+}
+

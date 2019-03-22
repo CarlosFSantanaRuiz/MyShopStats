@@ -1,3 +1,41 @@
-<p>
-  registeration-page works!
-</p>
+<div class="login-hero-img">
+
+    <div class="login-box">
+        <div class="login-outer  registration-outer">
+            
+            <img class="login-logo" src="assets/img/logo.svg" alt="Logo image"/>
+            
+            <div class="login-slogan">Register Today.</div>
+            
+            <form (submit)="onRegisterSubmit()">
+                <div>
+                  <span class="input-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                  <input class="input-form-text registration-form" [(ngModel)]="firstName"
+                  placeholder="First Name" type="text" name="firstName"/>
+                </div>
+                <div>
+                    <span class="input-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <input class="input-form-text registration-form" [(ngModel)]="lastName"
+                    placeholder="Last Name" type="text" name="lastName"/>
+                </div>
+                <div>
+                    <span class="input-icon reg-username-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <input class="input-form-text registration-form" [(ngModel)]="email"
+                    placeholder="Email" type="email" name="email"/>
+                </div>
+                <div>
+                    <span class="input-icon reg-password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                    <input class="input-form-text registration-form" [(ngModel)]="password"
+                    placeholder="Password" type="password" name="password"/>
+                </div>
+                <button class="login-btn" name="login" type="submit">REGISTER</button>
+            </form>
+            
+            <a class="forgot-password" routerLink="/login">ALREADY A USER? SIGN IN HERE.</a>
+            <app-notification *ngIf="msg != ''" [success]="success" [header]="header" [msg]="msg"></app-notification>
+        </div>
+
+    </div>
+    
+    </div>
+    

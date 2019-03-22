@@ -9,10 +9,15 @@ import { Router } from "@angular/router";
   styleUrls: ['./registeration-page.component.css']
 })
 export class RegisterationPageComponent implements OnInit {
-  name: String;
+  success: Boolean;
+  header: String;
+  msg: String = '';
+  
+  firstName: String;
+  lastName: String;
   email: String;
   password: String;
-  role: String;
+  role: String = "owner";
 
   constructor(
     private validateService: ValidateService,
@@ -25,11 +30,13 @@ export class RegisterationPageComponent implements OnInit {
 
   onRegisterSubmit(){
     const user = {
-      name: this.name,
+      firstName: this.firstName,
+      lastName: this.lastName,
       email: this.email,
       password: this.password,
       role: this.role
     }
+    console.log(user);
     if(!this.validateService.validateRegister(user)){
       console.log("Please Fill in all fields");
       return false;
