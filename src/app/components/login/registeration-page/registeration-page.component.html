@@ -1,7 +1,7 @@
 <div class="login-hero-img">
 
     <div class="login-box">
-        <div class="login-outer  registration-outer">
+        <div class="login-outer registration-outer">
             
             <img class="login-logo" src="assets/img/logo.svg" alt="Logo image"/>
             
@@ -9,12 +9,12 @@
             
             <form (submit)="onRegisterSubmit()">
                 <div>
-                  <span class="input-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                  <span class="input-icon">F</span>
                   <input class="input-form-text registration-form" [(ngModel)]="firstName"
                   placeholder="First Name" type="text" name="firstName"/>
                 </div>
                 <div>
-                    <span class="input-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span class="input-icon">L</span>
                     <input class="input-form-text registration-form" [(ngModel)]="lastName"
                     placeholder="Last Name" type="text" name="lastName"/>
                 </div>
@@ -26,7 +26,12 @@
                 <div>
                     <span class="input-icon reg-password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                     <input class="input-form-text registration-form" [(ngModel)]="password"
-                    placeholder="Password" type="password" name="password"/>
+                    placeholder="Password" type="text" name="password"/>
+                </div>
+                <div>
+                    <span class="input-icon reg-password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                    <input class="input-form-text registration-form" [(ngModel)]="confirmpassword"
+                    placeholder="Confirm Password" type="text" name="confirmpassword"/>
                 </div>
                 <button class="login-btn" name="login" type="submit">REGISTER</button>
             </form>

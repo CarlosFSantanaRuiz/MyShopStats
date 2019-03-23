@@ -7,10 +7,16 @@ export class ValidateService {
 
   constructor() { }
 
-  validateRegister(user){
-    if(user.firstName == undefined || user.lastName == undefined || user.email == undefined){
+  validateRegister(user, confirmpassword){
+    if(
+      [undefined, ""].includes(user.firstName) ||
+      [undefined, ""].includes(user.lastName) ||
+      [undefined, ""].includes(user.email) ||
+      [undefined, ""].includes(user.password) ||
+      [undefined, ""].includes(confirmpassword) 
+    ){
       return false
-    }else {
+    } else {
       return true
     }
   }
@@ -20,4 +26,20 @@ validateEmail(email){
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email)
   }
+
+validatePasswordMatch(password, confirmpassword){
+    if(password == confirmpassword) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  validatePasswordCriteria(password){
+    if(password.length > 7 && password.length < 21) {
+      return true;
+    } else {
+      return false;
+    }
+  } 
 };
