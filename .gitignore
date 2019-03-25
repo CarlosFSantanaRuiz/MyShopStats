@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-
+/backend/config/database.js
 # Gmail Config
 config/gmail.js
 
@@ -25,6 +25,7 @@ speed-measure-plugin.json
 *.launch
 .settings/
 *.sublime-workspace
+
 
 # IDE - VSCode
 .vscode/*
