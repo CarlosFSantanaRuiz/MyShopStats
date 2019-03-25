@@ -54,3 +54,4 @@ backend/public
 backend/config/gmail.js
 backend/config/database.js
 
+backend/config/database.js
