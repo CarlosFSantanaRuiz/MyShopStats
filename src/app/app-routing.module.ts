@@ -17,7 +17,7 @@ import { ForgotLoginPageComponent } from './components/login/forgot-login-page/f
 const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterationPageComponent},
-  {path: 'user/:id/shop-dashboard', component: ShopDashboardComponent, canActivate:[AuthGuard]},
+  {path: 'shop-dashboard', component: ShopDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/tech-dashboard', component: TechDashboardComponent, canActivate: [AuthGuard]},
   {path: 'user/:id/goals', component: GoalsDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/invoice', component: InvoiceDashboardComponent, canActivate:[AuthGuard]},
