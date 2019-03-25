@@ -9,7 +9,6 @@
 
 # dependencies
 /node_modules
-/backend/config/database.js
 # Gmail Config
 config/gmail.js
 
@@ -48,4 +47,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+#HDP
+backend/public
 backend/config/gmail.js
+backend/config/database.js
+
