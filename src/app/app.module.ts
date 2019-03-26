@@ -60,6 +60,14 @@ import { LoginTopbarComponent } from './components/navbar/login-topbar/login-top
 import { ShopProfileTechniciansFormComponent } from './components/shop-profile/shop-profile-technicians/shop-profile-technicians-form/shop-profile-technicians-form.component';
 import { ResetLoginPageComponent } from './components/login/reset-login-page/reset-login-page.component';
 import { NotificationComponent } from './components/common/notification/notification.component';
+import { ManageShopsComponent } from './components/manage-shops/manage-shops.component';
+import { ManageShopsDashboardComponent } from './components/manage-shops/manage-shops-dashboard/manage-shops-dashboard.component';
+import { ManageShopsListComponent } from './components/manage-shops/manage-shops-list/manage-shops-list.component';
+import { ManageShopsTechListComponent } from './components/manage-shops/manage-shops-tech-list/manage-shops-tech-list.component';
+import { ManageShopsAddComponent } from './components/manage-shops/manage-shops-add/manage-shops-add.component';
+import { FormHrsOpComponent } from './components/common/forms/form-hrs-op/form-hrs-op.component';
+import { FormContactPersonComponent } from './components/common/forms/form-contact-person/form-contact-person.component';
+import { FormShopInfoComponent } from './components/common/forms/form-shop-info/form-shop-info.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +116,15 @@ import { NotificationComponent } from './components/common/notification/notifica
     LoginTopbarComponent,
     ShopProfileTechniciansFormComponent,
     ResetLoginPageComponent,
-    NotificationComponent
+    NotificationComponent,
+    ManageShopsComponent,
+    ManageShopsDashboardComponent,
+    ManageShopsListComponent,
+    ManageShopsTechListComponent,
+    ManageShopsAddComponent,
+    FormHrsOpComponent,
+    FormContactPersonComponent,
+    FormShopInfoComponent
   ],
   imports: [
     BrowserModule,

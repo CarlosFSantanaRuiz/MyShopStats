@@ -854,6 +854,16 @@ i {
 thead > tr > th.left-table, tbody > tr > td.left-table {
   padding-left:26px;
 }
+thead > tr > th.left-table-fixed, tbody > tr > td.left-table-fixed {
+  padding-left:26px;
+  width: 3%;
+  padding-right:26px;
+}
+
+thead > tr > th.left-table-fixed.right-table-fixed, tbody > tr > td.left-table-fixed.right-table-fixed {
+  color: #b1b9bb;
+}
+
 table.table-height {
   margin-bottom:0px;
 }
@@ -3469,3 +3479,71 @@ input.input-form-text.registration-form {
   color: #0093B7;
 }
 
+
+
+/* Manage Shop Tech List */
+
+.manage-shops-tech-list {
+  background: #dde5e7;
+}
+
+table.manage-shops-tech-list-table {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.manage-shops-tech-list-table > tbody > tr > td {
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.manage-shops-tech-list-table>tbody>tr>td, 
+.manage-shops-tech-list-table>thead>tr>th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  vertical-align: middle;
+
+}
+
+.manage-shops-tech-list-table>thead>tr>th {
+  padding-top: 0px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.manage-shops-add-menu {
+  float: left;
+  width: 33.33333333%;
+  background: #e6ebec;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 3px solid #c7cdd0;
+  color: #6e7477;
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+.manage-shops-add-menu-check-icon {
+  float:right;
+  margin-top: 4px;
+  color: #a8abad;
+}
+
+.manage-shops-add-menu.active {
+  background: #ffffff;
+  border-bottom: 3px solid #0093B7;
+  color: #0093B7;
+}
+
+.next-button {
+  background: #00a65a;
+  color: #fff;
+}
+
+.hrs-op-outer {
+  padding: 0px;
+  padding-bottom: 15px;
+}

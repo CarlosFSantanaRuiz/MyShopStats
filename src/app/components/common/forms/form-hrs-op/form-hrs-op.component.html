@@ -1,0 +1,48 @@
+<div class="table table-striped table-modal-hrs-op">
+    <div class="table-header-style-hours-of-operation">
+
+        <div class="rows3-col1-header">
+            <span class="hrs-op-edit-header">
+                <i class="fa fa-calendar-times-o" aria-hidden="true"></i>Day
+            </span>
+        </div>
+        <div class="rows3-col2-header">
+            <span class="hrs-op-edit-header">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>Open
+            </span>
+        </div>
+        <div class="rows3-col3-header">
+            <span class="hrs-op-edit-header">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>Close
+            </span>
+        </div>
+
+        <div class="box-body box-body-hrs-op">
+            <div *ngFor="let weeklySchedule of defaultWeeklySchedule">
+                <div class="rows3-col1">
+                    <div class="hrs-op-inactive-btn" [ngClass]="weeklySchedule.schedule.start > 0 ? 'hrs-op-active-btn' : ''">
+                        <span>{{weeklySchedule.day.split('')[0].toUpperCase()}}</span>
+                    </div>
+                </div>
+                <div class="rows3-col2">
+                    <select class="modal-form-select" *ngIf="weeklySchedule.schedule.start > 0">
+                        <option *ngFor="let start of timearray" [selected]="start === weeklySchedule.schedule.start">{{amPmConvertItem(start)}}</option>
+                    </select>
+                    <select class="modal-form-select modal-form-select-disabled" *ngIf="weeklySchedule.schedule.start === 0" disabled>
+                        <option>CLOSED</option>
+                    </select>
+                </div>
+                <div class="rows3-col3">
+                    <select class="modal-form-select " *ngIf="weeklySchedule.schedule.start > 0">
+                        <option *ngFor="let end of timearray" [selected]="end === weeklySchedule.schedule.end">{{amPmConvertItem(end)}}</option>
+                    </select>
+                    <select class="modal-form-select modal-form-select-disabled" *ngIf="weeklySchedule.schedule.start === 0" disabled>
+                        <option>CLOSED</option>
+                    </select>
+                    <!--<app-dropdown [dropdownlist]="ampmarray"></app-dropdown>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

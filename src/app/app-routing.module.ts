@@ -13,6 +13,7 @@ import { ResetLoginPageComponent } from "./components/login/reset-login-page/res
 
 import { AuthGuard } from "./guards/auth.guard";
 import { ForgotLoginPageComponent } from './components/login/forgot-login-page/forgot-login-page.component';
+import { ManageShopsDashboardComponent } from './components/manage-shops/manage-shops-dashboard/manage-shops-dashboard.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'user/:id/goals', component: GoalsDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/invoice', component: InvoiceDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/shop-profile', component: ShopProfileDashboardComponent, canActivate:[AuthGuard]},
+  {path: 'user/:id/manage-shops', component: ManageShopsDashboardComponent, canActivate:[AuthGuard]},
   {path: '', redirectTo: 'user/:id/shop-dashboard', pathMatch: 'full', canActivate:[AuthGuard]},
   {path: 'user-profile', component: UserComponent, canActivate:[AuthGuard]},
   {path: 'user/reset/:id', component: ResetLoginPageComponent},

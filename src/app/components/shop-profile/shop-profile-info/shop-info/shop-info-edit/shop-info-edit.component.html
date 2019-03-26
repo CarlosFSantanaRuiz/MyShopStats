@@ -34,8 +34,10 @@
                 </div>
                 <div class="column1">State</div>
                 <div class="column2">
-                    <input type="text" name="State" ng-model="shop.address.state" class="input-form-text"
-                           ng-minlength="2" ng-maxlength="20" ng-required="true">
+                    <select class="modal-form-select">
+                        <option *ngFor="let state of states">
+                            {{state}}</option>
+                    </select>
                 </div>
                 <div class="column1">Zip</div>
                 <div class="column2">
