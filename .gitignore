@@ -9,7 +9,6 @@
 
 # dependencies
 /node_modules
-
 # Gmail Config
 config/gmail.js
 
@@ -25,6 +24,7 @@ speed-measure-plugin.json
 *.launch
 .settings/
 *.sublime-workspace
+
 
 # IDE - VSCode
 .vscode/*
@@ -47,4 +47,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+#HDP
+backend/public
 backend/config/gmail.js
+backend/config/database.js
+
+backend/config/database.js
