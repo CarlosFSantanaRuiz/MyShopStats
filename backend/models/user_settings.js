@@ -6,7 +6,7 @@ const UserSettingsSchema = mongoose.Schema({
     canAddShops: {type: Boolean, require: true},
     canDeleteShops: {type: Boolean, require: true},
     canAddShopGoals: {type: Boolean, require: true},
-    canAddTech: {type: Boolean, require: true},
+    canAddTechs: {type: Boolean, require: true},
     canAddTechGoals: {type: Boolean, require: true},
     canDeleteTechs: {type: Boolean, require: true},
     canAddUsers: {type: Boolean, require: true}
