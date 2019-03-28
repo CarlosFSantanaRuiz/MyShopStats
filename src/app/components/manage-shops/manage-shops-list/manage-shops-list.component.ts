@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-shops-list.component.css']
 })
 export class ManageShopsListComponent implements OnInit {
-
+  rowActive=false;
+  rowsActive = [];
   shops = [{
     shopId: 12385364,
     name: "Bill's Shop",
@@ -35,6 +36,15 @@ export class ManageShopsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleDropdown(index) {
+    var i = this.rowsActive.indexOf(index);
+    if (i > -1) {
+      this.rowsActive.splice(i, 1);
+    } else {
+      this.rowsActive.push(index);
+    }
   }
 
 }

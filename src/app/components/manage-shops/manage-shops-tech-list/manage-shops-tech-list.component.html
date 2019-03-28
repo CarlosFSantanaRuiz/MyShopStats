@@ -1,15 +1,62 @@
-<div>
+<div class="manage-shops-tech-list-table-outer">
+    <div class="tech-inner-header-outer">
+        <img class="tech-inner-circle" src="assets/img/user-icon.svg" alt="User profile picture">
+        <div class="shop-header tech-inner-header">TECHNICIAN LIST</div>
+        <div class="shop-button add-button new-tech-button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <span class="button-text-left">Add New</span>
+        </div>
+        <div class="shop-button add-button add-existing-button">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span class="button-text-left">Add Existing</span>
+        </div>
+      </div>
+
+  <!--
+    <select class="modal-form-select">
+        <option>Technician 1</option>
+        <option>Technician 2</option>
+    </select>
+    <div class="shop-button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span class="button-text-left">Existing Technician</span>
+    </div>
+    <div class="shop-button add-button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span class="button-text-left">New Technician</span>
+    </div>
+    -->
   <table class="manage-shops-tech-list-table">
     <thead>
       <tr>
-          <th>Technician</th>
+          <th class="left-table-fixed">#</th>
+          <th>First Name</th>    
+          <th>Last Name</th>              
+          <th>Email</th>
           <th>Role</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Tech Name</td>            
-            <td>admin</td>
+            <td class="left-table">1</td>
+            <td>John</td>
+            <td>Smith</td>
+            <td>john.smith@fake.com</td>            
+            <td>Manager</td>
+        </tr>
+        <tr>
+            <td class="left-table">2</td>
+            <td>First</td>
+            <td>Last</td>
+            <td>first.last@fake.com</td>            
+            <td>Technician</td>
+        </tr>
+        <tr>
+            <td class="left-table">2</td>
+            <td>First</td>
+            <td>Last</td>
+            <td>first.last@fake.com</td>            
+            <td>Technician</td>
         </tr>
       </tbody>
   </table>

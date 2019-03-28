@@ -3486,16 +3486,24 @@ input.input-form-text.registration-form {
 .manage-shops-tech-list {
   background: #dde5e7;
 }
-
+.manage-shops-tech-list-table-outer {
+  margin: 15px;
+  margin-top: 10px;
+}
 table.manage-shops-tech-list-table {
   width: 100%;
   margin-bottom: 10px;
   font-size: 12px;
 }
 
-.manage-shops-tech-list-table > tbody > tr > td {
-  background: #ffffff;
+.manage-shops-tech-list-table > tbody > tr {
+  background: rgb(255, 255, 255);
+  background: #eef2f3;
   font-size: 13px;
+}
+
+.manage-shops-tech-list-table > tbody > tr:nth-of-type(odd) {
+  background: #f6f8f9;
 }
 
 .manage-shops-tech-list-table>tbody>tr>td, 
@@ -3512,6 +3520,7 @@ table.manage-shops-tech-list-table {
   padding-top: 0px;
   border: none;
   text-transform: uppercase;
+  color: #0093b7;
 }
 
 .manage-shops-add-menu {
@@ -3546,4 +3555,44 @@ table.manage-shops-tech-list-table {
 .hrs-op-outer {
   padding: 0px;
   padding-bottom: 15px;
+}
+
+.dropdown-table-striped>tbody>tr.main-row:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.main-row {
+  cursor: pointer;
+}
+
+.tech-inner-header-outer {
+  height: 50px;
+}
+
+.tech-inner-circle {
+  float:left;
+  width:30px;
+  margin-left:7px;
+}
+.tech-inner-header {
+  font-size: 21px;
+  margin-left: 13px;
+  margin-top: 1px;
+}
+
+.new-tech-button, .add-existing-button {
+  padding: 5px 14px;
+  margin-top: 0px;
+}
+
+.add-existing-button {
+  background: #0093B7;
+}
+
+.add-existing-button:hover {
+   background: #019bc1;
+}
+
+.add-existing-button:active, .add-existing-button:focus  {
+  background: #008caf;
 }

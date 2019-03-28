@@ -3,7 +3,7 @@
     <div class="shop-header">Manage Shops</div>
   </div>
   <div class="col-md-6">
-        <div class="shop-button add-button">
+        <div class="shop-button add-button" (click)="openModal = 'add-shop'">
                 <i class="fa fa-plus" aria-hidden="true"></i>
                 <span class="button-text-left">Add Shop</span>
             </div>
@@ -13,6 +13,6 @@
     <app-manage-shops-list></app-manage-shops-list>
   </div>
 
-  <app-modal>
-      <app-manage-shops-add></app-manage-shops-add>
+  <app-modal *ngIf="openModal === 'add-shop'">
+      <app-manage-shops-add (notify)="toggleModal($event)"></app-manage-shops-add>
   </app-modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-manage-shops-dashboard',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-shops-dashboard.component.css']
 })
 export class ManageShopsDashboardComponent implements OnInit {
+  openModal: string = '';
+  @Input() notify;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleModal(contentname) {
+    this.openModal = contentname;
   }
 
 }

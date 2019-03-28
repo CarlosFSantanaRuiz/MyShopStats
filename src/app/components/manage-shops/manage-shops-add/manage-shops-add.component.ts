@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-manage-shops-add',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-shops-add.component.css']
 })
 export class ManageShopsAddComponent implements OnInit {
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+
   addShopActive = 1;
 
   constructor() { }
@@ -15,6 +17,10 @@ export class ManageShopsAddComponent implements OnInit {
 
   makeShopActive(activeShop) {
     this.addShopActive = activeShop;
+  }
+
+  closeModal() {
+    this.notify.emit('');
   }
 
 }
