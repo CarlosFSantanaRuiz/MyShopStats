@@ -7,13 +7,11 @@ export class ValidateService {
 
   constructor() { }
 
-  validateRegister(user, confirmpassword){
+  validateRegister(user){
     if(
       [undefined, ""].includes(user.firstName) ||
       [undefined, ""].includes(user.lastName) ||
-      [undefined, ""].includes(user.email) ||
-      [undefined, ""].includes(user.password) ||
-      [undefined, ""].includes(confirmpassword) 
+      [undefined, ""].includes(user.email) 
     ){
       return false
     } else {

@@ -23,17 +23,7 @@
                     <input class="input-form-text registration-form" [(ngModel)]="email"
                     placeholder="Email" type="email" name="email"/>
                 </div>
-                <div>
-                    <span class="input-icon reg-password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-                    <input class="input-form-text registration-form" [(ngModel)]="password"
-                    placeholder="Password" type="text" name="password"/>
-                </div>
-                <div>
-                    <span class="input-icon reg-password-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-                    <input class="input-form-text registration-form" [(ngModel)]="confirmpassword"
-                    placeholder="Confirm Password" type="text" name="confirmpassword"/>
-                </div>
-                <button class="login-btn" name="login" type="submit">REGISTER</button>
+                <button class="login-btn" name="login" type="submit" [disabled]='isDisabled'>REGISTER</button>
             </form>
             
             <a class="forgot-password" routerLink="/login">ALREADY A USER? SIGN IN HERE.</a>

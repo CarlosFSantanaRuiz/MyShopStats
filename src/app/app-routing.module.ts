@@ -24,10 +24,11 @@ const routes: Routes = [
   {path: 'user/:id/invoice', component: InvoiceDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/shop-profile', component: ShopProfileDashboardComponent, canActivate:[AuthGuard]},
   {path: 'user/:id/manage-shops', component: ManageShopsDashboardComponent, canActivate:[AuthGuard]},
-  {path: '', redirectTo: 'user/:id/shop-dashboard', pathMatch: 'full', canActivate:[AuthGuard]},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'user-profile', component: UserComponent, canActivate:[AuthGuard]},
   {path: 'user/reset/:id', component: ResetLoginPageComponent},
-  {path: 'user/forgot-login', component: ForgotLoginPageComponent}
+  {path: 'user/forgot-login', component: ForgotLoginPageComponent},
+  {path: '**', component: LoginComponent}
 ];
 
 @NgModule({

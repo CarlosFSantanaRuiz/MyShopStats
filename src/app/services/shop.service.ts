@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from  '@angular/common/http';
 import { map } from "rxjs/operators";
 import { ShopRoles } from "../components/common/models/shop_roles";
 import { Router } from "@angular/router";
-import { Profile } from '../components/common/models/profile';
-import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable({
   providedIn: 'root'

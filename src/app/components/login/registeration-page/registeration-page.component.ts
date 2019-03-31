@@ -16,9 +16,8 @@ export class RegisterationPageComponent implements OnInit {
   firstName: String;
   lastName: String;
   email: String;
-  password: String;
-  confirmpassword: String;
   role: String = "owner";
+  isDisabled: Boolean = false;
 
   constructor(
     private validateService: ValidateService,
@@ -29,23 +28,13 @@ export class RegisterationPageComponent implements OnInit {
   ngOnInit() {
   }
   validateData(user) {
-    if(!this.validateService.validateRegister(user, this.confirmpassword)){
+    if(!this.validateService.validateRegister(user)){
       this.msg = "Please Fill in all fields";
       return false;
     }
 
     if(!this.validateService.validateEmail(user.email)){
       this.msg = "Please use a valid email";
-      return false;
-    }
-
-    if(!this.validateService.validatePasswordCriteria(user.password)){
-      this.msg = "Passwords should be between 6 and 20 characters";
-      return false;
-    }
-
-    if(!this.validateService.validatePasswordMatch(user.password, this.confirmpassword)){
-      this.msg = "Passwords should match";
       return false;
     }
 
@@ -56,7 +45,6 @@ export class RegisterationPageComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      password: this.password,
       role: this.role
     }
 
@@ -65,9 +53,11 @@ export class RegisterationPageComponent implements OnInit {
     };
 
     this.authService.registerUser(user).subscribe(data => {
+      this.isDisabled =true;
       if(data){
           this.router.navigate(['/login']);
       }else {
+        this.isDisabled = false;
         console.log('/register')
       }
     });
