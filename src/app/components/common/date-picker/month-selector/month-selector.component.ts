@@ -1,16 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-date-picker',
-  templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.css']
+  selector: 'app-month-selector',
+  templateUrl: './month-selector.component.html',
+  styleUrls: ['../date-picker.component.css']
 })
-export class DatePickerComponent implements OnInit {
-  @Input() mode: String;
+export class MonthSelectorComponent implements OnInit {
   calendarActive = false;
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth();
-
   selectedYear = this.currentYear;
   selectedMonth = this.currentMonth;
   displayYear = this.selectedYear;
@@ -41,4 +39,5 @@ export class DatePickerComponent implements OnInit {
       this.displayYear = displayYear;
     }
   }
+
 }

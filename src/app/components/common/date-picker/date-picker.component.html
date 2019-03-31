@@ -1,6 +1,10 @@
 <div class="calendar-box">
   <input type="text" class="calendar-input" />
-  <div class="calendar-button">
+  <div class="calendar-button" (click)="toggleCalendarDropdown()">
       <img class="calendar-icon" src="assets/img/calendar-icon-small.svg">
+  </div>
+  <div class="calender-dropdown-outer" *ngIf="calendarActive">
+      <app-month-selector *ngIf="mode === 'month'"></app-month-selector>
+      <app-date-selector *ngIf="mode === 'date'"></app-date-selector>
   </div>
 </div>

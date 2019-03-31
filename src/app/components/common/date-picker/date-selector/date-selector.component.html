@@ -1,0 +1,22 @@
+<div class="calendar-header">
+  <div class="calendar-nav calendar-left-nav" (click)="updateDisplayMonthYear(displayMonth - 1,displayYear - 1)">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+  </div>
+  <div class="calendar-year">{{monthNames[displayMonth].substring(0,3)}} {{displayYear}}</div>
+  <div class="calendar-nav calendar-right-nav" (click)="updateDisplayMonthYear(displayMonth + 1, displayYear + 1)"
+      [ngClass]="currentYear === displayYear && currentMonth === displayMonth ? 'calendar-right-nav-disabled' : ''">
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+  </div>
+</div>
+<div class="calendar-body">
+<div *ngFor="let day of dayNames" class="calendar-day-item calendar-day-header">
+  {{day.substring(0,2)}}
+</div>
+<div *ngFor="let week of displayWeeks; index as weekslength">
+    <div *ngFor="let day of week" class="calendar-day-item" (click)="updateActiveDate(day, weekslength)"
+      [ngClass]="[isDayActive(day,weekslength) ? 'calendar-item-active' : '', 
+      isDayDisabled(day, weekslength) ? 'calendar-day-item-disabled' : '']">
+        {{day}}
+      </div>
+  </div>
+</div>

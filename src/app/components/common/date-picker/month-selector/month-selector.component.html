@@ -1,0 +1,18 @@
+<div class="calendar-header">
+  <div class="calendar-nav calendar-left-nav" (click)="updateDisplayYear(displayYear - 1)">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+  </div>
+  <div class="calendar-year">{{displayYear}}</div>
+  <div class="calendar-nav calendar-right-nav" (click)="updateDisplayYear(displayYear + 1)"
+      [ngClass]="currentYear === displayYear ? 'calendar-right-nav-disabled' : ''">
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+  </div>
+</div>
+<div class="calendar-body">
+  <div *ngFor="let month of monthNames; index as i" class="calendar-item"
+      (click)="updateActiveMonthYear(i)" 
+      [ngClass]="[selectedMonth === i && displayYear === selectedYear ? 'calendar-item-active' : '',
+        i > currentMonth && displayYear === currentYear ? 'calendar-item-disabled' : '']">
+      {{month.substring(0,3)}}
+  </div>
+</div>

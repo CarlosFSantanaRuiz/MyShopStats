@@ -68,6 +68,8 @@ import { ManageShopsAddComponent } from './components/manage-shops/manage-shops-
 import { FormHrsOpComponent } from './components/common/forms/form-hrs-op/form-hrs-op.component';
 import { FormContactPersonComponent } from './components/common/forms/form-contact-person/form-contact-person.component';
 import { FormShopInfoComponent } from './components/common/forms/form-shop-info/form-shop-info.component';
+import { DateSelectorComponent } from './components/common/date-picker/date-selector/date-selector.component';
+import { MonthSelectorComponent } from './components/common/date-picker/month-selector/month-selector.component';
 
 @NgModule({
   declarations: [
@@ -124,7 +126,9 @@ import { FormShopInfoComponent } from './components/common/forms/form-shop-info/
     ManageShopsAddComponent,
     FormHrsOpComponent,
     FormContactPersonComponent,
-    FormShopInfoComponent
+    FormShopInfoComponent,
+    DateSelectorComponent,
+    MonthSelectorComponent
   ],
   imports: [
     BrowserModule,
