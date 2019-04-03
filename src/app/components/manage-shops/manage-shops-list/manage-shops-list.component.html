@@ -20,7 +20,7 @@
                     </tr>
                     <tr *ngIf="rowsActive.includes(i)" class="manage-shops-tech-list">
                       <td colspan="4">          
-                        <app-manage-shops-tech-list></app-manage-shops-tech-list>
+                        <app-manage-shops-tech-list (notify)="toggleModal($event)"></app-manage-shops-tech-list>
                       </td>
                     </tr>
                   </ng-container>

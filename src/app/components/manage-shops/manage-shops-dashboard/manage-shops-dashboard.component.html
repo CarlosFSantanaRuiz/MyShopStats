@@ -10,9 +10,17 @@
   </div>
   
   <div class="col-md-12">
-    <app-manage-shops-list></app-manage-shops-list>
+    <app-manage-shops-list (notify)="toggleModal($event)"></app-manage-shops-list>
   </div>
 
   <app-modal *ngIf="openModal === 'add-shop'">
       <app-manage-shops-add (notify)="toggleModal($event)"></app-manage-shops-add>
-  </app-modal>
+  </app-modal>  
+  
+    <app-modal *ngIf="openModal === 'add-new-technician'">
+        <app-manage-shops-add-technician (notify)="toggleModal($event)"></app-manage-shops-add-technician>
+    </app-modal>
+
+    <app-modal *ngIf="openModal === 'add-existing-technician'">
+            <app-manage-shops-existing-technician (notify)="toggleModal($event)"></app-manage-shops-existing-technician>
+        </app-modal>

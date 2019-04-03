@@ -1,10 +1,9 @@
 <div class="modal-form-outer modal-invoice-form-outer">
     <form name="addInvoiceForm" class="modal-form" novalidate="novalidate">
 
-        <div class="modal-header-outer mho-shop-info">
-            <div class="header-column1 add-invoice-header"><img src="../assets/img/header-invoice-icon.svg" width="40" class="img-circle-modal-header" alt="User Image"></div>
-            <div class="header-column2">Add Invoice</div>
-        </div>
+    <app-modal-header title="Add Invoice">
+        <img src="../assets/img/header-invoice-icon.svg" width="40" class="modal-header-icon">
+    </app-modal-header>
 
         <div class="modal-body-outer">
             <div class="row">
@@ -155,15 +154,11 @@
 
     </div>
 
-        <div class="modal-footer">
-            <button class="modal-buttons cancel-button" (click)="closeModal()">
-                <i class="fa fa-times" aria-hidden="true"></i>
-                Cancel
-            </button>
-            <button class="modal-buttons submit-button" ng-click="addInvoice()">
-                <i class="fa fa-check" aria-hidden="true"></i>
-                ADD
-            </button>
-        </div>
+    <app-modal-footer (notify)="closeModal($event)">
+        <button class="modal-buttons submit-button" ng-click="addInvoice()">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            ADD
+        </button>
+    </app-modal-footer>
     </form>
 </div>

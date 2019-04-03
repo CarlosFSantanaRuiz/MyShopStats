@@ -1,0 +1,21 @@
+.modal-header-body {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 2px;
+  }
+
+.background-yellow {
+    background: #f1a534;
+    color: #fff;
+}
+
+.background-gray {
+    background: #dde0e2;
+    color: #6e7477;
+}
+.background-green {
+    background: #00A65A;
+    color: #fff;
+}
+

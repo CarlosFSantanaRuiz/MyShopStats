@@ -7,11 +7,9 @@
                 <span>Back</span>
               </div>
             </div>
-            <div class="modal-header-outer mho-shop-info">
-                <div class="header-column1 hc1-shop-info"><img src="assets/img/car-icon-yellow.svg" width="45"
-                                                               class="img-circle-modal-header" alt="User Image"></div>
-                <div class="header-column2">Edit Shop Info</div>
-            </div>
+            <app-modal-header title="Edit Shop Info">
+                <img src="assets/img/car-icon-yellow.svg" width="45" class="modal-header-icon">
+            </app-modal-header>
     
             <div class="modal-body-outer">
     
@@ -55,17 +53,13 @@
                            ng-required="true">
                 </div>
             </div>
-    
-            <div class="modal-footer">
-                <div class="modal-buttons cancel-button hidden-xs" (click)='closeModal()'>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Cancel
-                </div>
+
+            <app-modal-footer (notify)="closeModal($event)">
                 <button class="modal-buttons submit-button">
                     <i class="fa fa-check" aria-hidden="true"></i>
                     Save
                 </button>
-            </div>
+            </app-modal-footer>
     
         </form>
       </div>

@@ -1,17 +1,8 @@
 <div class="modal-form-outer">
     <form name="editContactPersonForm" class="modal-form">
-        <div class="modal-back-row visible-xs-block">
-          <div class="back-button" ng-click="$close()">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <span>Back</span>
-          </div>
-        </div>
-        <div class="modal-header-outer modal-header-contact-person">
-            <div class="header-column1 header-column1-contact-person"><img src="assets/img/header-contact-icon.svg" width="40"
-                                                                           class="img-circle-modal-header"
-                                                                           alt="User Image"></div>
-            <div class="header-column2 header-column2-contact-person">Edit Contact Person</div>
-        </div>
+        <app-modal-header title="Edit Contact Person" color="yellow">
+            <img src="assets/img/header-contact-icon.svg" width="35" class="modal-header-icon">
+        </app-modal-header>
 
         <div class="modal-body-outer">
 
@@ -39,17 +30,12 @@
             </div>
         </div>
 
-        <div class="modal-footer">
-            <button class="modal-buttons cancel-button hidden-xs" (click)='closeModal()'>
-                <i class="fa fa-times" aria-hidden="true"></i>
-                Cancel
-            </button>
-            <!--ng-disabled="editContactPersonForm.$invalid"-->
-            <button  class="modal-buttons submit-button">
+        <app-modal-footer (notify)="closeModal($event)">
+            <button class="modal-buttons submit-button">
                 <i class="fa fa-check" aria-hidden="true"></i>
                 Save
             </button>
-        </div>
+        </app-modal-footer>
 
     </form>
 </div>

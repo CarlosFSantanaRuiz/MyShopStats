@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-form-shop-info',
@@ -6,13 +6,13 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./form-shop-info.component.css']
 })
 export class FormShopInfoComponent implements OnInit {
-  shopName;
-  laborRate;
-  salesTax;
+  @Input() shop;
+  @Output() shopInfo = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

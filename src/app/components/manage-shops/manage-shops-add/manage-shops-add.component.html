@@ -1,19 +1,9 @@
 <div class="modal-dialog">
     <div class="modal-form-outer">
-        <form name="addShop" class="modal-form">
-            <div class="modal-back-row visible-xs-block">
-              <div class="back-button" ng-click="$close()">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                <span>Back</span>
-              </div>
-            </div>
-            <div class="modal-header-outer mho-shop-info">
-                <div class="header-column1 hc1-shop-info">
-                    <img src="assets/img/car-icon-yellow.svg" width="45" 
-                    class="img-circle-modal-header" alt="User Image">
-                </div>
-                <div class="header-column2">Add Shop</div>
-            </div>
+        <form (submit)="onShopSubmit()" name="addShop" class="modal-form">
+            <app-modal-header title="Add Shop">
+                <img src="assets/img/car-icon-yellow.svg" width="45" class="modal-header-icon">
+            </app-modal-header>
 
             <div>
                 <div class="manage-shops-add-menu"
@@ -38,34 +28,26 @@
             </div>
     
             <div *ngIf="addShopActive === 1" class="modal-body-outer">
-                <app-form-shop-info></app-form-shop-info>
+                <app-form-shop-info [shop]="shopInfo" (shopInfo)="shopInfo=$event"></app-form-shop-info>
             </div>
 
             <div *ngIf="addShopActive === 2" class="modal-body-outer">
                 <app-form-contact-person></app-form-contact-person>
             </div>
-    
             <div *ngIf="addShopActive === 3" class="modal-body-outer hrs-op-outer">
                 <app-form-hrs-op></app-form-hrs-op>
             </div>
-
-            <div class="modal-footer">
-                <div class="modal-buttons cancel-button hidden-xs" (click)='closeModal()'>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Cancel
-                </div>
-                <div 
-                    *ngIf="addShopActive != 3" (click)="makeShopActive(addShopActive + 1)"
+            <app-modal-footer (notify)="closeModal($event)">
+                <div *ngIf="addShopActive != 3" (click)="makeShopActive(addShopActive + 1)"
                     class="modal-buttons next-button">
                     <i class="fa fa-forward" aria-hidden="true"></i>
                     Next
-            </div>
+                </div>
                 <button *ngIf="addShopActive === 3" class="modal-buttons submit-button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     Add
                 </button>
-            </div>
-    
+            </app-modal-footer>
         </form>
       </div>
     </div>

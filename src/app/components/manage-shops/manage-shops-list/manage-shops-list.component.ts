@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-manage-shops-list',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-shops-list.component.css']
 })
 export class ManageShopsListComponent implements OnInit {
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
   rowActive=false;
   rowsActive = [];
   shops = [{
@@ -47,4 +48,7 @@ export class ManageShopsListComponent implements OnInit {
     }
   }
 
+  toggleModal(value) {
+    this.notify.emit(value);
+  }
 }

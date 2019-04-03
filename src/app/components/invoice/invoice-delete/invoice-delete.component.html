@@ -1,25 +1,15 @@
-<!--MODAL DELETE INVOICE-->
-
 <div class="modal-form-outer">
   <div class="modal-form">
 
-      <div class="modal-header-outer">
-          <div class="header-column1 hc1-delete-tech">
-              <img src="assets/img/header-delete-icon.svg" width="40" class="img-circle-modal-header" alt="User Image">
-          </div>
-          <div class="header-column2">Delete Invoice?</div>
-      </div>
+    <app-modal-header title="Delete Invoice?" color="gray">
+        <img src="assets/img/header-delete-icon.svg" width="40" class="modal-header-icon">
+    </app-modal-header>
 
-      <div class="modal-footer">
-          <div (click)="closeModal()" class="modal-buttons cancel-button">
-              <i class="fa fa-times" aria-hidden="true"></i>
-              No
-          </div>
-          <div ng-click="deleteInvoice()" class="modal-buttons delete-button">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-              Yes
-          </div>
-      </div>
-
+    <app-modal-footer (notify)="closeModal($event)">
+        <div ng-click="deleteInvoice()" class="modal-buttons delete-button">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            Yes
+        </div>
+    </app-modal-footer>
   </div>
 </div>

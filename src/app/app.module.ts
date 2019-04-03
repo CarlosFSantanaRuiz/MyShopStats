@@ -70,6 +70,10 @@ import { FormContactPersonComponent } from './components/common/forms/form-conta
 import { FormShopInfoComponent } from './components/common/forms/form-shop-info/form-shop-info.component';
 import { DateSelectorComponent } from './components/common/date-picker/date-selector/date-selector.component';
 import { MonthSelectorComponent } from './components/common/date-picker/month-selector/month-selector.component';
+import { ModalHeaderComponent } from './components/common/modal/modal-header/modal-header.component';
+import { ModalFooterComponent } from './components/common/modal/modal-footer/modal-footer.component';
+import { ManageShopsAddTechnicianComponent } from './components/manage-shops/manage-shops-tech-list/manage-shops-add-technician/manage-shops-add-technician.component';
+import { ManageShopsExistingTechnicianComponent } from './components/manage-shops/manage-shops-tech-list/manage-shops-existing-technician/manage-shops-existing-technician.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +132,11 @@ import { MonthSelectorComponent } from './components/common/date-picker/month-se
     FormContactPersonComponent,
     FormShopInfoComponent,
     DateSelectorComponent,
-    MonthSelectorComponent
+    MonthSelectorComponent,
+    ModalHeaderComponent,
+    ModalFooterComponent,
+    ManageShopsAddTechnicianComponent,
+    ManageShopsExistingTechnicianComponent
   ],
   imports: [
     BrowserModule,

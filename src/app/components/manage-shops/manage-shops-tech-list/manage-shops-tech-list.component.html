@@ -2,11 +2,11 @@
     <div class="tech-inner-header-outer">
         <img class="tech-inner-circle" src="assets/img/user-icon.svg" alt="User profile picture">
         <div class="shop-header tech-inner-header">TECHNICIAN LIST</div>
-        <div class="shop-button add-button new-tech-button">
+        <div class="shop-button add-button new-tech-button" (click)="toggleModal('add-new-technician')">
             <i class="fa fa-plus" aria-hidden="true"></i>
             <span class="button-text-left">Add New</span>
         </div>
-        <div class="shop-button add-button add-existing-button">
+        <div class="shop-button add-button add-existing-button" (click)="toggleModal('add-existing-technician')">
             <i class="fa fa-user-circle" aria-hidden="true"></i>
             <span class="button-text-left">Add Existing</span>
         </div>

@@ -34,4 +34,13 @@ export class ShopService {
         throw err;
       }
   };
+
+  addShop(shop){
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.authToken
+    });
+    return this.http.post('http://localhost:3000/shop/shop-new', shop, {headers: header})
+      .pipe(map(res => res))
+    };
 };
