@@ -3537,6 +3537,7 @@ table.manage-shops-tech-list-table {
 .manage-shops-add-menu {
   float: left;
   width: 33.33333333%;
+  width: 50%;
   background: #e6ebec;
   padding: 10px;
   text-align: center;

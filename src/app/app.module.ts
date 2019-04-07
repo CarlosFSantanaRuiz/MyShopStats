@@ -74,6 +74,7 @@ import { ModalHeaderComponent } from './components/common/modal/modal-header/mod
 import { ModalFooterComponent } from './components/common/modal/modal-footer/modal-footer.component';
 import { ManageShopsAddTechnicianComponent } from './components/manage-shops/manage-shops-tech-list/manage-shops-add-technician/manage-shops-add-technician.component';
 import { ManageShopsExistingTechnicianComponent } from './components/manage-shops/manage-shops-tech-list/manage-shops-existing-technician/manage-shops-existing-technician.component';
+import { HrsOpDayComponent } from './components/common/forms/form-hrs-op/hrs-op-day/hrs-op-day.component';
 
 @NgModule({
   declarations: [
@@ -136,7 +137,8 @@ import { ManageShopsExistingTechnicianComponent } from './components/manage-shop
     ModalHeaderComponent,
     ModalFooterComponent,
     ManageShopsAddTechnicianComponent,
-    ManageShopsExistingTechnicianComponent
+    ManageShopsExistingTechnicianComponent,
+    HrsOpDayComponent
   ],
   imports: [
     BrowserModule,

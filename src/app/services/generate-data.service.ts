@@ -13,58 +13,45 @@ export class GenerateDataService {
 
   constructor() { }
 
-  amPmConvertItem(element) {
-    var elementstring = element.toString();
-    var hour;
-    var min;
-    var ampm = 'AM';
-      if (elementstring.length <= 2) {
-        if (elementstring === '0') {
-          hour = '12';
-          min = '00';
-        }
-        if (elementstring === '30') {
-          hour = '12';
-          min = '30';
-        }
-      }
-      else if (elementstring.length === 3) {
-        hour = elementstring.substring(0,1);
-        min = elementstring.toString().substring(1, 3);
-      } else {
-        hour = elementstring.substring(0,2);
-        min = elementstring.substring(2, 4);
-      }
+  formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+    var newminutes = minutes < 10 ? '0'+minutes.toString() : minutes.toString();
+    var strTime = hours + ':' + newminutes + ' ' + ampm;
+    return strTime;
+  };
 
-      if (hour > 12) {
-        hour = hour - 12;
-        ampm = 'PM';
-      }
-      return hour + ':' + min + ' ' + ampm
+  generateDateUTC(date) {
+    var newdate = new Date(date);
+    var utc = new Date(newdate.getTime() + newdate.getTimezoneOffset() * 60000);
+    return utc
   }
 
   getDefaultWeeklySchedule() {
     var weeklyScheduleArray = [];
-    var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    var days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    var date = new Date(0);
     for (var i = 0; i < days.length; i ++) {
       var weeklySchedule = {};
         weeklySchedule['day'] = days[i];
         weeklyScheduleArray.push(weeklySchedule);
       var startEndObject = {};
-        startEndObject['start'] = 24;
-        startEndObject['end'] = 24;
+        startEndObject['start'] = date.toString();
+        startEndObject['end'] = date.toString();
       weeklySchedule['schedule'] = startEndObject;
     }
     return weeklyScheduleArray;
   }
 
-  timeGenerator() {
-    var timearray = [];
-    for (var i = 0; i < 24; i++) {
-      //if(i < 10) { time = '0' + i;} else (time = i+'')
-      timearray.push(i * 100);
-      timearray.push((i * 100) + 30);
+  dateGenerator() {
+    var datearray = [];
+    for (var i = 0; i < 48; i++) {
+      var date = new Date(i * 1800000);
+      datearray.push(date.toString());
     }
-    return timearray;
+    return datearray;
   }
 }

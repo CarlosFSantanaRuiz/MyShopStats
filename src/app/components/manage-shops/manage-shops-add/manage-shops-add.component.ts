@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { ShopService } from 'src/app/services/shop.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { GenerateDataService } from 'src/app/services/generate-data.service';
 
 @Component({
   selector: 'app-manage-shops-add',
@@ -12,12 +13,19 @@ export class ManageShopsAddComponent implements OnInit {
   shopInfo = {
     shopName: null,
     laborRate: null,
-    salesTax: null
+    salesTax: null,
+    shopAddress: null,
+    shopCity: null,
+    shopState: null,
+    shopZip: null
   };
+  weeklySchedules = this.GenerateDataService.getDefaultWeeklySchedule();
   addShopActive = 1;
+  addShopAlreadyActive = [];
 
   constructor(
     private AuthService: AuthService,
+    private GenerateDataService : GenerateDataService,
     private ShopService: ShopService
   ) { }
 
@@ -26,6 +34,9 @@ export class ManageShopsAddComponent implements OnInit {
 
   makeShopActive(activeShop) {
     this.addShopActive = activeShop;
+    if (!(this.addShopAlreadyActive.includes(activeShop))) {
+        this.addShopAlreadyActive.push(activeShop);
+    }
   }
 
   closeModal() {
@@ -40,47 +51,24 @@ export class ManageShopsAddComponent implements OnInit {
       }, 
       shop: {
         shopName: this.shopInfo.shopName,
-        shopAddress: "44234 This Street",
-        shopCity: "Bluffdale",
-        shopState: "UT",
-        shopZip: "84065",
+        shopAddress: this.shopInfo.shopAddress,
+        shopCity: this.shopInfo.shopCity,
+        shopState: this.shopInfo.shopState,
+        shopZip: this.shopInfo.shopZip,
         shopRate: this.shopInfo.laborRate,
         shopTax: this.shopInfo.salesTax,
-        hoursOfOp: {
-          monday: {
-            start: 32400000,
-            end: 57600000
-          },
-          tuesday: {
-            start: 32400000,
-            end: 57600000
-          },
-          wednesday: {
-            start: 32400000,
-            end: 57600000
-          },
-          thursday: {
-            start: 32400000,
-            end: 57600000
-          },
-          friday: {
-            start: 32400000,
-            end: 57600000
-          },
-          saturday: {
-            start: 0,
-            end: 0
-          },
-          sunday: {
-            start: 0,
-            end: 0
-          }
-        }
+        hoursOfOp: {}
       }
     }
 
-    this.ShopService.addShop(shop).subscribe(data => {
+    for (var i = 0; i < this.weeklySchedules.length; i++ ) {
+      var day = this.weeklySchedules[i].day
+      var schedule = this.weeklySchedules[i].schedule
+      shop.shop["hoursOfOp"][day] = schedule;
+    }
 
+    this.ShopService.addShop(shop).subscribe(data => {
+      this.closeModal();
     });
   }
 

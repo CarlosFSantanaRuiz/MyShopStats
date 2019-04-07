@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import { GenerateDataService } from 'src/app/services/generate-data.service';
 
@@ -10,13 +10,7 @@ import { GenerateDataService } from 'src/app/services/generate-data.service';
 export class FormHrsOpComponent implements OnInit {
   @Input() weeklySchedules: any;
 
-  defaultWeeklySchedule = this.GenerateDataService.getDefaultWeeklySchedule();
-
-  timearray = this.GenerateDataService.timeGenerator();
-
-  amPmConvertItem(element) {
-    return this.GenerateDataService.amPmConvertItem(element);
-  }
+  datearray = this.GenerateDataService.dateGenerator();
 
   constructor(
     private GenerateDataService : GenerateDataService

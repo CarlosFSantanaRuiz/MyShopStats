@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ShopService } from 'src/app/services/shop.service';
 
 @Component({
   selector: 'app-manage-shops-list',
@@ -9,6 +10,7 @@ export class ManageShopsListComponent implements OnInit {
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
   rowActive=false;
   rowsActive = [];
+  shopList = [];
   shops = [{
     shopId: 12385364,
     name: "Bill's Shop",
@@ -34,9 +36,21 @@ export class ManageShopsListComponent implements OnInit {
   },
 ]
 
-  constructor() { }
+  constructor(private ShopService : ShopService) { }
 
   ngOnInit() {
+    this.getShopList();
+    console.log(this.shopList);
+  }
+
+  getShopList() {
+    this.ShopService.getShopList().subscribe(data => {
+      if(data.shop_list){
+        data.shop_list.forEach(element => {
+          this.shopList.push(element);
+        }); 
+      };
+    });
   }
 
   toggleDropdown(index) {

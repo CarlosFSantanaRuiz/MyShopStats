@@ -8,12 +8,12 @@
               <th></th>
           </tr>
       </thead>
-      <tbody class="box-body">
-            <ng-container *ngFor="let shop of shops; index as i" >
+      <tbody class="box-body" *ngIf="shopList.length > 0">
+            <ng-container *ngFor="let shop of shopList; index as i" >
                     <tr class="main-row" (click)="toggleDropdown(i)">
                       <td class="left-table-fixed">{{i + 1}}</td>
                       <td>{{shop.name}}</td>
-                      <td>{{shop.location}}</td>
+                      <td>{{shop.address}}</td>
                       <td class="left-table-fixed right-table-fixed">
                         <i class="fa fa-chevron-down" [ngClass]="rowsActive.includes(i) ? 'stats-blue' : ''" aria-hidden="true"></i>
                       </td>
@@ -24,6 +24,9 @@
                       </td>
                     </tr>
                   </ng-container>
+      </tbody>
+      <tbody class="box-body" *ngIf="shopList.length === 0">
+          <tr><td colspan="4">No Shops Found</td></tr>
       </tbody>
   </table>
 </div>

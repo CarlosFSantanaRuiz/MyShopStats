@@ -1,0 +1,29 @@
+<div class="rows3-col1">
+    <div class="hrs-op-inactive-btn" (click)="dayActiveToggle()"
+    [ngClass]="dayActive === true > 0 ? 'hrs-op-active-btn' : ''">
+        <span>{{daySchedule.day.split('')[0].toUpperCase()}}</span>
+    </div>
+</div>
+<div class="rows3-col2">
+    <select class="modal-form-select" *ngIf="dayActive === true" [(ngModel)]="daySchedule.schedule.start" >
+    <option *ngFor="let start of datearray" [selected]="start === daySchedule.schedule.start" value="{{start}}">
+            {{formatAMPM(start)}}
+    </option>
+    </select>
+    <select class="modal-form-select modal-form-select-disabled"
+      *ngIf="dayActive === false" disabled>
+        <option>CLOSED</option>
+    </select>
+</div>
+<div class="rows3-col3">
+    <select class="modal-form-select " *ngIf="dayActive === true" [(ngModel)]="daySchedule.schedule.end">
+        <option *ngFor="let end of datearray" [selected]="end === daySchedule.schedule.end" value="{{end}}">
+            {{formatAMPM(end)}}
+        </option>
+    </select>
+    <select class="modal-form-select modal-form-select-disabled"
+      *ngIf="dayActive === false" disabled>
+        <option>CLOSED</option>
+    </select>
+    <!--<app-dropdown [dropdownlist]="ampmarray"></app-dropdown>-->
+</div>

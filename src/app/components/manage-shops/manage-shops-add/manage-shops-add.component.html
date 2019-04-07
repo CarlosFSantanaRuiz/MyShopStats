@@ -10,18 +10,13 @@
                 [ngClass]="addShopActive === 1 ? 'active' : ''"
                 (click) = "makeShopActive(1)">
                     <span>Shop Info</span>
-                    <i class="fa fa-check-circle manage-shops-add-menu-check-icon" aria-hidden="true"></i>
+                    <i class="fa fa-check-circle manage-shops-add-menu-check-icon" 
+                    aria-hidden="true"></i>
                 </div>
 
                 <div class="manage-shops-add-menu"
                 [ngClass]="addShopActive === 2 ? 'active' : ''"
-                (click) = "makeShopActive(2)" >
-                    <span>Contact</span>
-                    <i class="fa fa-check-circle manage-shops-add-menu-check-icon" aria-hidden="true"></i>
-                </div>
-                <div class="manage-shops-add-menu"
-                [ngClass]="addShopActive === 3 ? 'active' : ''"
-                (click) = "makeShopActive(3)">
+                (click) = "makeShopActive(2)">
                     <span>Hours</span>
                     <i class="fa fa-check-circle manage-shops-add-menu-check-icon" aria-hidden="true"></i>
                 </div>
@@ -31,19 +26,16 @@
                 <app-form-shop-info [shop]="shopInfo" (shopInfo)="shopInfo=$event"></app-form-shop-info>
             </div>
 
-            <div *ngIf="addShopActive === 2" class="modal-body-outer">
-                <app-form-contact-person></app-form-contact-person>
-            </div>
-            <div *ngIf="addShopActive === 3" class="modal-body-outer hrs-op-outer">
-                <app-form-hrs-op></app-form-hrs-op>
+            <div *ngIf="addShopActive === 2" class="modal-body-outer hrs-op-outer">
+                <app-form-hrs-op [weeklySchedules]="weeklySchedules"></app-form-hrs-op>
             </div>
             <app-modal-footer (notify)="closeModal($event)">
-                <div *ngIf="addShopActive != 3" (click)="makeShopActive(addShopActive + 1)"
+                <div *ngIf="addShopActive != 2" (click)="makeShopActive(addShopActive + 1)"
                     class="modal-buttons next-button">
                     <i class="fa fa-forward" aria-hidden="true"></i>
                     Next
                 </div>
-                <button *ngIf="addShopActive === 3" class="modal-buttons submit-button">
+                <button *ngIf="addShopActive === 2" class="modal-buttons submit-button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     Add
                 </button>
