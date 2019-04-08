@@ -3608,3 +3608,7 @@ table.manage-shops-tech-list-table {
 .add-existing-button:active, .add-existing-button:focus  {
   background: #008caf;
 }
+
+.warning-validation {
+  color: #e89f32;
+}

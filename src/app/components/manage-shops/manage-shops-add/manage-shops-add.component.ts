@@ -33,10 +33,10 @@ export class ManageShopsAddComponent implements OnInit {
   }
 
   makeShopActive(activeShop) {
-    this.addShopActive = activeShop;
-    if (!(this.addShopAlreadyActive.includes(activeShop))) {
-        this.addShopAlreadyActive.push(activeShop);
+    if (!(this.addShopAlreadyActive.includes(this.addShopActive))) {
+        this.addShopAlreadyActive.push(this.addShopActive);
     }
+    this.addShopActive = activeShop;
   }
 
   closeModal() {

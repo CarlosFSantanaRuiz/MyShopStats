@@ -14,6 +14,9 @@ export class HrsOpDayComponent implements OnInit {
   constructor(private GenerateDataService : GenerateDataService) { }
   
   ngOnInit() {
+    if (this.daySchedule.schedule.start <= -1) {
+      this.dayActive = false;
+    }
   }
 
   formatAMPM(date) {
@@ -27,7 +30,7 @@ export class HrsOpDayComponent implements OnInit {
     this.daySchedule.schedule.start = new Date(-1);
     this.daySchedule.schedule.end = new Date(-1);
     }    
-    if (this.dayActive === false) {
+    if (this.dayActive === true) {
       this.daySchedule.schedule.start = new Date(0);
       this.daySchedule.schedule.end = new Date(0);
     }

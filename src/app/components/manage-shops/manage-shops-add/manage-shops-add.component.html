@@ -11,6 +11,7 @@
                 (click) = "makeShopActive(1)">
                     <span>Shop Info</span>
                     <i class="fa fa-check-circle manage-shops-add-menu-check-icon" 
+                    [ngClass]="addShopAlreadyActive.includes(1) ? 'warning-validation' : ''"
                     aria-hidden="true"></i>
                 </div>
 
@@ -18,7 +19,9 @@
                 [ngClass]="addShopActive === 2 ? 'active' : ''"
                 (click) = "makeShopActive(2)">
                     <span>Hours</span>
-                    <i class="fa fa-check-circle manage-shops-add-menu-check-icon" aria-hidden="true"></i>
+                    <i class="fa fa-check-circle manage-shops-add-menu-check-icon" 
+                    [ngClass]="addShopAlreadyActive.includes(2) ? 'warning-validation' : ''"
+                    aria-hidden="true"></i>
                 </div>
             </div>
     

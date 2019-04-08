@@ -40,7 +40,6 @@ export class ManageShopsListComponent implements OnInit {
 
   ngOnInit() {
     this.getShopList();
-    console.log(this.shopList);
   }
 
   getShopList() {
